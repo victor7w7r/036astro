@@ -20,7 +20,6 @@ $ git checkout blank
 
 - axios: Promise based HTTP client for the browser and node.js
 - nanostores: A tiny (less than 1kb) state manager using observables and persistent stores
-- solidjs Component Framework
 - svelte Component Framework
 - tailwindcss: Utility-first CSS framework for rapidly building custom user interfaces
 
