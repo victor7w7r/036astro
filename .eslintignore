@@ -1,0 +1,17 @@
+**/*.log
+**/.DS_Store
+.git/
+.github/
+/package
+.vscode
+node_modules
+pnpm-lock.yaml
+.dockerignore
+.env
+.env.production
+.gitignore
+Dockerfile
+package.json
+pnpm-lock.yaml
+README.md
+tsconfig.json

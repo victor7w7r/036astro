@@ -1,0 +1,54 @@
+---
+import Layout from '@/layouts/main/MainLayout.astro';
+
+import { Call, Spinner, StorageState } from '@/components';
+
+import '@/styles/global.css';
+import '@/styles/home.css';
+---
+
+<Layout title="Home Page">
+  <div class='page-container'>
+    <div class='home-container'>
+      <div class='card-flex'>
+        <div class='card-container'>
+          <p class='adaptable-amina'>
+            Made with love by
+          </p>
+          <img
+            alt='' id='imageone' class='scale-75 lg:scale-80'
+          />
+          <h3 class='adaptable-center-text-base font-semibold mb-4'>
+            Happy Hacking! with Typescript?
+          </h3>
+          <p class='adaptable-center-text-base font-roboto mb-8'>
+            Roboto Font works with
+          </p>
+          <img
+            alt='' id='imagetwo' class='scale-50 tall:scale-65 lg:scale-65'
+          />
+        </div>
+        <div class='card-container'>
+          <StorageState client:load />
+          <h3 class='adaptable-center-text-bold'>
+            Lets see bitcoin price
+          </h3>
+          <Call client:load><Spinner /></Call>
+        </div>
+      </div>
+      <div class='centered-button-ctn'>
+        <a class='standard-button' href='/store'>
+          Go to store
+        </a>
+      </div>
+      <div class='flex flex-row gap-7 mt-3 w-fit mx-auto'>
+        <button class='blue-button' />
+        <button class='purple-button' />
+        <button class='red-button' />
+        <button class='emerald-button' />
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<script src='@/scripts' />

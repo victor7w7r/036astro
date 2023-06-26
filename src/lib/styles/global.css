@@ -1,0 +1,71 @@
+.adaptable-text {
+  @apply text-slate-900
+  dark:text-slate-300
+  transition-colors duration-1000;
+}
+
+.adaptable-center-text {
+  @apply text-slate-900 dark:text-slate-300
+  transition-colors duration-1000 text-center;
+}
+
+.adaptable-center-text-base {
+  @apply adaptable-center-text
+  text-base lg:text-xl;
+}
+
+.adaptable-center-text-bold {
+  @apply adaptable-center-text
+  text-lg lg:text-3xl font-semibold my-4;
+}
+
+.adaptable-call {
+  @apply adaptable-center-text
+  text-base lg:text-lg font-semibold;
+}
+
+.adaptable-amina {
+  @apply adaptable-center-text text-lg
+  tall:text-xl lg:text-3xl font-amina;
+}
+
+.store-title {
+  @apply adaptable-center-text text-base
+  lg:text-xl font-semibold mb-4;
+}
+
+.adaptable-xl {
+  @apply adaptable-center-text text-base
+  lg:text-xl font-semibold;
+}
+
+.standard-button {
+  @apply dark:bg-white/50
+  bg-stone-800/10 hover:bg-slate-300/80
+  hover:scale-105 text-black font-bold
+  py-2 px-4 rounded-full transition
+  ease-in-out select-none
+  disabled:text-black/50;
+}
+
+.page-container {
+  @apply flex absolute h-[70%] inset-0
+  m-auto backdrop-blur-xl justify-center;
+}
+
+.toggle-title {
+  @apply ml-3 text-sm font-medium
+  adaptable-text select-none;
+}
+
+.card-container {
+  @apply max-w-xl py-4 px-8 shadow-lg rounded-lg
+  backdrop-blur-3xl flex flex-col
+  lg:items-center lg:justify-center
+  transition-colors duration-1000;
+}
+
+.centered-button-ctn {
+  @apply flex items-center
+  justify-center my-8 tall:my-6;
+}

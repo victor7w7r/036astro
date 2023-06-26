@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+@font-face {
+	font-family: 'amina-reska';
+	src: url('/fonts/amina-reska.eot'),
+    url('/fonts/amina-reska.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.home-container {
+  @apply flex flex-col
+  w-5/6 lg:w-full
+  h-2/6 lg:h-3/6;
+}
+
+.card-flex {
+  @apply flex flex-col
+  mx-auto lg:mx-0
+  lg:flex-row lg:justify-evenly
+  gap-3 lg:gap-0
+  content-center;
+}
+
+.color-button {
+  @apply border-4 rounded-full
+  select-none w-16 h-16
+  transition-colors duration-1000;
+}
+
+.blue-button {
+  @apply color-button bg-sky-300
+  border-sky-600/100
+  dark:bg-sky-900
+  dark:border-sky-700/100;
+}
+
+.purple-button {
+  @apply color-button bg-purple-300
+  border-purple-600/100
+  dark:bg-purple-900
+  dark:border-purple-700/100;
+}
+
+.red-button {
+  @apply color-button bg-red-300
+  border-red-600/100
+  dark:bg-red-900
+  dark:border-red-700/100;
+}
+
+.emerald-button {
+  @apply color-button bg-emerald-300
+  border-emerald-600/100
+  dark:bg-emerald-900
+  dark:border-emerald-700/100;
+}
