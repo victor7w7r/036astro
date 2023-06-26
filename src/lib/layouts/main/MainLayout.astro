@@ -1,10 +1,7 @@
 ---
-import Header from '../../components/header/Header.astro';
+import Header from '@/components/header/Header.astro';
 
-export interface Props {
-	title: string;
-}
-
+export type Props = { title: string }
 const { title } = Astro.props;
 ---
 

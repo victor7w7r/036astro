@@ -1,3 +1,5 @@
+import Cookies from 'js-cookie';
+
 import { listenTheme } from '@/events';
 import { setData, theme } from '@/stores';
 import { buttonCallback, inputValue } from '@/utils';
@@ -16,5 +18,9 @@ document.querySelectorAll<HTMLDivElement>('.card-container')
 
 buttonCallback(
   'standard-button',
-  () => setData(inputValue('inputable'))
+  () => {
+    const value = inputValue('inputable');
+    Cookies.set('data',value);
+    setData(value);
+  }
 );

@@ -1,4 +1,5 @@
 export { default as Call } from './call/Call.svelte';
+export { default as CookieState } from './cookie-state/CookieState.svelte';
 export { default as Header } from './header/Header.astro';
 export { default as Spinner } from './spinner/Spinner.astro';
 export { default as StorageState } from './storage-state/StorageState.svelte';

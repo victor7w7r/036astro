@@ -1,7 +1,7 @@
 ---
 import Layout from '@/layouts/main/MainLayout.astro';
 
-import { StorageState } from '@/components';
+import { CookieState, StorageState } from '@/components';
 
 import '@/styles/global.css';
 import '@/styles/store.css';
@@ -29,6 +29,7 @@ import '@/styles/store.css';
             Send
           </button>
         </div>
+        <CookieState client:load />
         <StorageState client:load />
       </div>
       <div class='centered-button-ctn'>

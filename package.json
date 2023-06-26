@@ -10,20 +10,19 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/solid-js": "^2.2.0",
     "@astrojs/svelte": "^3.0.0",
     "@astrojs/tailwind": "^4.0.0",
     "@nanostores/persistent": "^0.9.0",
-    "@nanostores/solid": "^0.4.2",
     "astro": "^2.7.0",
     "axios": "^1.4.0",
+    "js-cookie": "^3.0.5",
     "nanostores": "^0.9.2",
-    "solid-js": "^1.7.6",
     "svelte": "^3.55.0",
     "tailwindcss": "^3.3.2"
   },
   "devDependencies": {
     "@types/eslint": "8.40.2",
+    "@types/js-cookie": "^3.0.3",
     "@types/node": "^20.3.1",
     "@typescript-eslint/eslint-plugin": "5.60.0",
     "@typescript-eslint/parser": "^5.60.0",

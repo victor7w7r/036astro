@@ -1,7 +1,10 @@
 ---
 import Layout from '@/layouts/main/MainLayout.astro';
 
-import { Call, Spinner, StorageState } from '@/components';
+import {
+  Call, CookieState,
+  Spinner, StorageState
+} from '@/components';
 
 import '@/styles/global.css';
 import '@/styles/home.css';
@@ -29,6 +32,7 @@ import '@/styles/home.css';
           />
         </div>
         <div class='card-container'>
+          <CookieState client:load />
           <StorageState client:load />
           <h3 class='adaptable-center-text-bold'>
             Lets see bitcoin price
