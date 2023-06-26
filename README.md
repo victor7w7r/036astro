@@ -1,4 +1,4 @@
-# 036sveltekit
+# 036astro
 
 A template for Astro with essential packages and strict TypeScript
 
