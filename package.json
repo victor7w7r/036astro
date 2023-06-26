@@ -28,7 +28,6 @@
     "@typescript-eslint/parser": "^5.60.0",
     "eslint": "^8.43.0",
     "eslint-plugin-astro": "^0.27.2",
-    "eslint-plugin-solid": "^0.12.1",
     "eslint-plugin-svelte": "^2.31.1"
   }
 }
