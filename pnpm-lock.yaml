@@ -16,7 +16,7 @@ dependencies:
     version: 0.9.0(nanostores@0.9.3)
   astro:
     specifier: ^2.8.0
-    version: 2.8.0(@types/node@20.4.0)
+    version: 2.8.0(@types/node@20.4.1)
   axios:
     specifier: ^1.4.0
     version: 1.4.0
@@ -41,8 +41,8 @@ devDependencies:
     specifier: ^3.0.3
     version: 3.0.3
   '@types/node':
-    specifier: ^20.4.0
-    version: 20.4.0
+    specifier: ^20.4.1
+    version: 20.4.1
   '@typescript-eslint/eslint-plugin':
     specifier: 5.61.0
     version: 5.61.0(@typescript-eslint/parser@5.61.0)(eslint@8.44.0)(typescript@5.1.3)
@@ -115,7 +115,7 @@ packages:
       astro: ^2.5.0
     dependencies:
       '@astrojs/prism': 2.1.2
-      astro: 2.8.0(@types/node@20.4.0)
+      astro: 2.8.0(@types/node@20.4.1)
       github-slugger: 1.5.0
       import-meta-resolve: 2.2.2
       rehype-raw: 6.1.1
@@ -147,7 +147,7 @@ packages:
       svelte: ^3.55.0 || ^4.0.0
     dependencies:
       '@sveltejs/vite-plugin-svelte': 2.4.2(svelte@4.0.5)(vite@4.3.9)
-      astro: 2.8.0(@types/node@20.4.0)
+      astro: 2.8.0(@types/node@20.4.1)
       svelte: 4.0.5
       svelte2tsx: 0.6.16(svelte@4.0.5)(typescript@5.1.3)
     transitivePeerDependencies:
@@ -162,7 +162,7 @@ packages:
       astro: ^2.6.5
       tailwindcss: ^3.0.24
     dependencies:
-      astro: 2.8.0(@types/node@20.4.0)
+      astro: 2.8.0(@types/node@20.4.1)
       autoprefixer: 10.4.14(postcss@8.4.24)
       postcss: 8.4.24
       postcss-load-config: 4.0.1(postcss@8.4.24)
@@ -772,7 +772,7 @@ packages:
       '@sveltejs/vite-plugin-svelte': 2.4.2(svelte@4.0.5)(vite@4.3.9)
       debug: 4.3.4
       svelte: 4.0.5
-      vite: 4.3.9(@types/node@20.4.0)
+      vite: 4.3.9(@types/node@20.4.1)
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -791,7 +791,7 @@ packages:
       magic-string: 0.30.0
       svelte: 4.0.5
       svelte-hmr: 0.15.2(svelte@4.0.5)
-      vite: 4.3.9(@types/node@20.4.0)
+      vite: 4.3.9(@types/node@20.4.1)
       vitefu: 0.2.4(vite@4.3.9)
     transitivePeerDependencies:
       - supports-color
@@ -876,8 +876,8 @@ packages:
       '@types/unist': 2.0.6
     dev: false
 
-  /@types/node@20.4.0:
-    resolution: {integrity: sha512-jfT7iTf/4kOQ9S7CHV9BIyRaQqHu67mOjsIQBC3BKZvzvUB6zLxEwJ6sBE3ozcvP8kF6Uk5PXN0Q+c0dfhGX0g==}
+  /@types/node@20.4.1:
+    resolution: {integrity: sha512-JIzsAvJeA/5iY6Y/OxZbv1lUcc8dNSE77lb2gnBH+/PJ3lFR1Ccvgwl5JWnHAkNHcRsT0TbpVOsiMKZ1F/yyJg==}
 
   /@types/parse5@6.0.3:
     resolution: {integrity: sha512-SuT16Q1K51EAVPz1K29DJ/sXjhSQ0zjvsypYJ6tlwVsRV9jwW5Adq2ch8Dq8kDBCkYnELS7N7VNCSB5nC56t/g==}
@@ -1183,7 +1183,7 @@ packages:
       - supports-color
     dev: true
 
-  /astro@2.8.0(@types/node@20.4.0):
+  /astro@2.8.0(@types/node@20.4.1):
     resolution: {integrity: sha512-bqdhE9039dzi0mqaWGO9rMk5HKxTn5TckxFmRPUdsV1qmbpghXtwuERHblfJu5etQofV6WVEyTrouG+BLRkqfA==}
     engines: {node: '>=16.12.0', npm: '>=6.14.0'}
     hasBin: true
@@ -1244,7 +1244,7 @@ packages:
       typescript: 5.1.3
       unist-util-visit: 4.1.2
       vfile: 5.3.7
-      vite: 4.3.9(@types/node@20.4.0)
+      vite: 4.3.9(@types/node@20.4.1)
       vitefu: 0.2.4(vite@4.3.9)
       which-pm: 2.0.0
       yargs-parser: 21.1.1
@@ -4183,7 +4183,7 @@ packages:
       vfile-message: 3.1.4
     dev: false
 
-  /vite@4.3.9(@types/node@20.4.0):
+  /vite@4.3.9(@types/node@20.4.1):
     resolution: {integrity: sha512-qsTNZjO9NoJNW7KnOrgYwczm0WctJ8m/yqYAMAK9Lxt4SoySUfS5S8ia9K7JHpa3KEeMfyF8LoJ3c5NeBJy6pg==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -4208,7 +4208,7 @@ packages:
       terser:
         optional: true
     dependencies:
-      '@types/node': 20.4.0
+      '@types/node': 20.4.1
       esbuild: 0.17.19
       postcss: 8.4.24
       rollup: 3.25.1
@@ -4224,7 +4224,7 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 4.3.9(@types/node@20.4.0)
+      vite: 4.3.9(@types/node@20.4.1)
     dev: false
 
   /vscode-css-languageservice@6.2.6:

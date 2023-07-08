@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { environment } from '../../env';
+import { environment } from '@/env';
 
 export const timeout = 5000;
 
