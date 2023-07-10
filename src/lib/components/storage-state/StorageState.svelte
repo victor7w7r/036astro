@@ -5,8 +5,11 @@
     'adaptable-center-text text-base lg:text-xl font-semibold';
 </script>
 
-{#if $data}
-  <p class={design}>Store State: Yes, you write <b>{ $data }</b></p>
-{:else}
-  <p class={design}>Store State: Not yet.</p>
-{/if}
+<p class={design}>
+  Store State:
+  {#if $data}
+    Yes, you write <b>{ $data }</b>
+  {:else}
+    Not yet.
+  {/if}
+</p>

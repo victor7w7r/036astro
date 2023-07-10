@@ -20,7 +20,11 @@ buttonCallback(
   'standard-button',
   () => {
     const value = inputValue('inputable');
-    Cookies.set('data',value);
+    Cookies.set(
+      'data',
+      value,
+      { httpOnly: true }
+    );
     setData(value);
   }
 );
