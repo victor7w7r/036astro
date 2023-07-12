@@ -1,12 +1,12 @@
 ---
-import Layout from '@/layouts/main/MainLayout.astro';
+import Layout from '@/layouts/Layout.astro';
 
 import { CookieState, StorageState } from '@/components';
 
 import '@/styles/store.css';
 ---
 
-<Layout title="Store Page">
+<Layout title='Store Page'>
   <div class='page-container'>
     <div class='store-container'>
       <div class='card-container'>
@@ -24,7 +24,7 @@ import '@/styles/store.css';
           </label>
         </div>
         <div class='store-btn'>
-          <button class='standard-button'>
+          <button class='standard-button send-button'>
             Send
           </button>
         </div>
@@ -43,4 +43,28 @@ import '@/styles/store.css';
   </div>
 </Layout>
 
-<script src='@/scripts/store' />
+<script>
+import Cookies from 'js-cookie';
+
+import { listenTheme } from '@/events';
+import { setData, theme } from '@/stores';
+import { buttonCallback, inputValue } from '@/utils';
+
+const { control } = theme.get();
+
+document.querySelectorAll<HTMLDivElement>('.card-container')
+  .forEach((container) => {
+    container.classList.add(control);
+    listenTheme((theme) => {
+      const classes = container.classList;
+      classes.remove(classes[classes.length - 1]!);
+      classes.add(theme.control);
+    });
+  });
+
+buttonCallback('send-button', () => {
+  const value = inputValue('inputable');
+  Cookies.set('data', value);
+  setData(value);
+});
+</script>

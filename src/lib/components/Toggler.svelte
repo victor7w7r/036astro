@@ -1,7 +1,7 @@
 <script lang='ts'>
-  import { theme, toggle } from '@/stores/theme-store';
+import { theme, toggle } from '@/stores/theme-store';
 
-  import './Toggler.css';
+import '@/styles/toggler.css';
 </script>
 
 <div class='relative'>

@@ -1,10 +1,10 @@
 <script lang='ts'>
-  import { getBitcoin } from '@/services';
+import { getBitcoin } from '@/services';
 
-  const textStyle =
-    'adaptable-center-text text-base lg:text-lg font-semibold';
+const textStyle =
+  'adaptable-center-text text-base lg:text-lg font-semibold';
 
-  const btc = getBitcoin();
+const btc = getBitcoin();
 </script>
 
 {#await btc}

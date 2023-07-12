@@ -1,7 +1,5 @@
 ---
-import Toggler from '../toggler/Toggler.svelte';
-
-import './header.css';
+import Toggler from './Toggler.svelte';
 ---
 
 <div class='flex items-center justify-center'>
@@ -24,4 +22,32 @@ import './header.css';
   </nav>
 </div>
 
-<script src='./header' />
+<script>
+import { listenTheme } from '@/events';
+import { theme } from '@/stores';
+
+const { control } = theme.get();
+
+const container = document
+  .querySelector<HTMLDivElement>('nav')!;
+
+container.classList.add(control);
+
+listenTheme((theme) => {
+  const classes = container!.classList;
+  classes.remove(classes[classes.length - 1]!);
+  classes.add(theme.control);
+});
+</script>
+
+<style>
+.navbar {
+  @apply backdrop-blur-xl transition-colors
+  duration-1000 rounded-full w-11/12 mt-3;
+}
+
+.toggler-container {
+  @apply items-center mt-4 sm:static
+  sm:inset-auto sm:ml-6 sm:pr-0;
+}
+</style>

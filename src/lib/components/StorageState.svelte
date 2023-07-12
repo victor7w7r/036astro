@@ -1,8 +1,8 @@
 <script lang='ts'>
-  import { data } from '@/stores/data-store';
+import { data } from '@/stores/data-store';
 
-  const design =
-    'adaptable-center-text text-base lg:text-xl font-semibold';
+const design =
+  'adaptable-center-text text-base lg:text-xl font-semibold';
 </script>
 
 <p class={design}>
