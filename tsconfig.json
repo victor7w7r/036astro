@@ -6,6 +6,8 @@
       "@/*": ["src/lib/*"],
       "@comps/*": ["src/lib/components/*"],
       "@layouts/*": ["src/lib/layouts/*"]
-    }
+    },
+    "jsx": "preserve",
+    "jsxImportSource": "solid-js"
   }
 }
