@@ -4,7 +4,5 @@ import svelte from '@astrojs/svelte';
 import tailwind from '@astrojs/tailwind';
 
 export default defineConfig({
-  integrations: [
-    svelte(), tailwind()
-  ]
+  integrations: [svelte(), tailwind()]
 });

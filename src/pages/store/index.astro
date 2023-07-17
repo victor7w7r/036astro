@@ -1,15 +1,15 @@
 ---
-import Layout from '@/layouts/Layout.astro';
+import CookieState from '@/common/components/CookieState.svelte';
+import StorageState from '@/common/components/StorageState.svelte';
+import Layout from '@/common/layouts/Layout.astro';
 
-import { CookieState, StorageState } from '@/components';
-
-import '@/styles/store.css';
+import '@/store/styles/store.css';
 ---
 
 <Layout title='Store Page'>
   <div class='page-container'>
     <div class='store-container'>
-      <div class='card-container'>
+      <div id='card-container' class='card-container'>
         <h3 class='store-title'>
           Write anything in this form and send
         </h3>
@@ -23,11 +23,7 @@ import '@/styles/store.css';
             here
           </label>
         </div>
-        <div class='store-btn'>
-          <button class='standard-button send-button'>
-            Send
-          </button>
-        </div>
+        <div id='send-button' class='store-btn'></div>
         <CookieState client:load />
         <StorageState client:load />
       </div>
@@ -43,28 +39,5 @@ import '@/styles/store.css';
   </div>
 </Layout>
 
-<script>
-import Cookies from 'js-cookie';
-
-import { listenTheme } from '@/events';
-import { setData, theme } from '@/stores';
-import { buttonCallback, inputValue } from '@/utils';
-
-const { control } = theme.get();
-
-document.querySelectorAll<HTMLDivElement>('.card-container')
-  .forEach((container) => {
-    container.classList.add(control);
-    listenTheme((theme) => {
-      const classes = container.classList;
-      classes.remove(classes[classes.length - 1]!);
-      classes.add(theme.control);
-    });
-  });
-
-buttonCallback('send-button', () => {
-  const value = inputValue('inputable');
-  Cookies.set('data', value);
-  setData(value);
-});
-</script>
+<script src='@/common/elements' />
+<script src='@/store/elements' />

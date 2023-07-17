@@ -1,7 +1,6 @@
 import { persistentAtom } from '@nanostores/persistent';
 
-import { dispatchTheme } from '@/events/theme-event';
-import type { Theme } from '@/models/theme';
+import type { Theme } from '@/common/models';
 
 export const theme = persistentAtom<Theme>('theme', {
   isDark: false,
@@ -16,15 +15,15 @@ export const theme = persistentAtom<Theme>('theme', {
 
 export const setDark = (
   isDark: boolean
-): void => dispatchTheme(
-  {...theme.get(), isDark }, theme
+): void => theme.set(
+  { ...theme.get(), isDark }
 );
 
 export const toggle = (): void => {
 
   const current = theme.get();
 
-  dispatchTheme(current.isDark ? {
+  theme.set(current.isDark ? {
     ...current,
     isDark: false,
     dark: 'dark:bg-zinc-900',
@@ -36,7 +35,7 @@ export const toggle = (): void => {
     white: 'bg-white',
     control: 'bg-slate-700/30',
     togglePeer: 'peer-checked:bg-dark'
-  }, theme);
+  });
 
   document.body.classList.toggle('dark');
 
@@ -48,7 +47,7 @@ export const changeSelector = (
 
   const current = theme.get();
 
-  dispatchTheme(current.isDark ? {
+  theme.set(current.isDark ? {
     ...current,
     dark: `dark:bg-${selector}-900`,
     control: `bg-${selector}-700/30`,
@@ -58,7 +57,7 @@ export const changeSelector = (
     white: `bg-${selector}-300`,
     control: `bg-${selector}-700/30`,
     togglePeer: `peer-checked:bg-${selector}-300`
-  }, theme);
+  });
 };
 
 export const changeBlue = (): void =>

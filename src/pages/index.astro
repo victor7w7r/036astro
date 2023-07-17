@@ -1,36 +1,45 @@
 ---
-import Layout from '@/layouts/Layout.astro';
+import Layout from '@/common/layouts/Layout.astro';
 
-import {
-  Call, CookieState,
-  Spinner, StorageState
-} from '@/components';
+import CookieState from '@/common/components/CookieState.svelte';
+import StorageState from '@/common/components/StorageState.svelte';
+import Call from '@/home/components/Call.svelte';
+import Spinner from '@/home/components/Spinner.astro';
 
-import '@/styles/home.css';
+import '@/home/styles/home.css';
 ---
 
 <Layout title='Home Page'>
   <div class='page-container'>
     <div class='home-container'>
       <div class='card-flex'>
-        <div class='card-container'>
+        <div id='card-container' class='card-container'>
           <p class='adaptable-amina'>
             Made with love by
           </p>
-          <img
-            alt='' id='imageone' class='scale-75 lg:scale-80'
-          />
+          <img-reactive
+            style='scale-75 lg:scale-80'
+            white='brandwhite'
+            black='brand'
+          >
+          </img-reactive>
           <h3 class='adaptable-center-text-base font-semibold mb-4'>
             Happy Hacking! with Typescript?
           </h3>
           <p class='adaptable-center-text-base font-roboto mb-8'>
             Roboto Font works with
           </p>
+          <img-reactive
+            style='scale-50 tall:scale-65 lg:scale-65'
+            white='tailwindwhite'
+            black='tailwind'
+          >
+          </img-reactive>
           <img
-            alt='' id='imagetwo' class='scale-50 tall:scale-65 lg:scale-65'
+            alt='' id='imagetwo' class=''
           />
         </div>
-        <div class='card-container'>
+        <div id='card-container' class='card-container'>
           <CookieState client:load />
           <StorageState client:load />
           <h3 class='adaptable-center-text-bold'>
@@ -44,60 +53,13 @@ import '@/styles/home.css';
           Go to store
         </a>
       </div>
-      <div class='flex flex-row gap-7 mt-3 w-fit mx-auto'>
-        <button class='blue-button' />
-        <button class='purple-button' />
-        <button class='red-button' />
-        <button class='emerald-button' />
+      <div
+        id='buttons-selector'
+        class='flex flex-row gap-7 mt-3 w-fit mx-auto'>
       </div>
     </div>
   </div>
 </Layout>
 
-<script>
-import { listenTheme } from '@/events';
-import {
-  changeBlue, changePurple,
-  changeRed, changeEmerald, theme
-} from '@/stores';
-import {
-  buttonCallback, imageSrc
-} from '@/utils';
-
-const { isDark, control } = theme.get();
-
-document.querySelectorAll<HTMLDivElement>('.card-container')
-  .forEach((container) => {
-    const classes = container.classList;
-    classes.add(control);
-    listenTheme((theme) => {
-      classes.remove(classes[classes.length - 1]!);
-      classes.add(theme.control);
-    });
-  });
-
-buttonCallback('blue-button', changeBlue);
-buttonCallback('purple-button', changePurple);
-buttonCallback('red-button', changeRed);
-buttonCallback('emerald-button', changeEmerald);
-
-const changeBrandSrc = (isDarkSel: boolean) =>
-  imageSrc(
-    'imageone',
-    `/img/${isDarkSel ? 'brandwhite': 'brand'}.png`
-  );
-
-const changeTailwindSrc = (isDarkSel: boolean) =>
-  imageSrc(
-    'imagetwo',
-    `/img/${isDarkSel ? 'tailwindwhite': 'tailwind'}.png`
-  );
-
-changeBrandSrc(isDark);
-changeTailwindSrc(isDark);
-
-listenTheme(theme => {
-  changeBrandSrc(theme.isDark);
-  changeTailwindSrc(theme.isDark);
-});
-</script>
+<script src='@/common/elements' />
+<script src='@/home/elements' />

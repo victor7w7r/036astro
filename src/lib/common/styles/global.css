@@ -39,6 +39,13 @@
   lg:text-xl font-semibold;
 }
 
+.card-container {
+  @apply max-w-xl py-4 px-8 shadow-lg rounded-lg
+  backdrop-blur-3xl flex flex-col
+  lg:items-center lg:justify-center
+  transition-colors duration-1000;
+}
+
 .standard-button {
   @apply dark:bg-white/50
   bg-stone-800/10 hover:bg-slate-300/80
@@ -58,14 +65,8 @@
   adaptable-text select-none;
 }
 
-.card-container {
-  @apply max-w-xl py-4 px-8 shadow-lg rounded-lg
-  backdrop-blur-3xl flex flex-col
-  lg:items-center lg:justify-center
-  transition-colors duration-1000;
-}
-
 .centered-button-ctn {
   @apply flex items-center
   justify-center my-8 tall:my-6;
 }
+

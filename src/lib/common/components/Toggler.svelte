@@ -1,7 +1,9 @@
 <script lang='ts'>
-import { theme, toggle } from '@/stores/theme-store';
+  import { theme, toggle } from '@/common/stores/theme-store';
 
-import '@/styles/toggler.css';
+  import '@/common/styles/toggler.css';
+
+  $: ({ isDark, togglePeer } = $theme);
 </script>
 
 <div class='relative'>
@@ -15,10 +17,10 @@ import '@/styles/toggler.css';
         value=''
         id='checked-toggle'
         class='sr-only peer'
-        checked={$theme.isDark}
+        checked={isDark}
         on:change={toggle}
       />
-      <div class={`${$theme.togglePeer} peer toggle-design`}></div>
+      <div class={`${togglePeer} peer toggle-design`}></div>
       <span class='ml-3 text-sm font-medium adaptable-text select-none'>
         Dark Mode
       </span>

@@ -14,9 +14,9 @@ export type Binance = {
   highPrice: string,
   lowPrice: string,
   volume: string,
-  quoteVolume:string,
+  quoteVolume: string,
   openTime: number,
-  closeTime:number,
+  closeTime: number,
   firstId: number,
   lastId: number,
   count: number
@@ -38,9 +38,9 @@ export const errorBinance: Binance = {
   highPrice: '',
   lowPrice: '',
   volume: '',
-  quoteVolume:'',
+  quoteVolume: '',
   openTime: 0,
-  closeTime:0,
+  closeTime: 0,
   firstId: 0,
   lastId: 0,
   count: 0
