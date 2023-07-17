@@ -1,13 +1,21 @@
 {
-  "extends": "astro/tsconfigs/strictest",
+  "extends": "./tsconfig.lint.json",
   "compilerOptions": {
+    "allowJs": false,
     "baseUrl": ".",
-    "paths": {
-      "@/*": ["src/lib/*"],
-      "@comps/*": ["src/lib/components/*"],
-      "@layouts/*": ["src/lib/layouts/*"]
-    },
-    "jsx": "preserve",
-    "jsxImportSource": "solid-js"
-  }
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "noEmit": true,
+    "paths": { "@/*": ["src/lib/*"] },
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "target": "ES2020",
+    "verbatimModuleSyntax": true
+  },
+  "files": ["./.eslintrc.cjs"],
+  "include": ["src", "./*.d.ts"]
 }

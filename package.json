@@ -7,27 +7,34 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "lint": "eslint . --ext .svelte,.astro,.ts --ignore-path .gitignore",
     "astro": "astro"
   },
   "dependencies": {
     "@astrojs/svelte": "^3.1.0",
     "@astrojs/tailwind": "^4.0.0",
-    "@nanostores/persistent": "^0.9.0",
-    "astro": "^2.8.1",
+    "@nanostores/persistent": "^0.9.1",
+    "astro": "^2.8.3",
     "axios": "^1.4.0",
+    "hooked-elements": "^2.2.2",
     "js-cookie": "^3.0.5",
     "nanostores": "^0.9.3",
     "svelte": "^4.0.5",
-    "tailwindcss": "^3.3.2"
+    "tailwindcss": "^3.3.3",
+    "uce": "^1.18.0",
+    "uhtml": "^3.2.1"
   },
   "devDependencies": {
     "@types/eslint": "8.44.0",
     "@types/js-cookie": "^3.0.3",
-    "@types/node": "^20.4.1",
-    "@typescript-eslint/eslint-plugin": "6.0.0",
-    "@typescript-eslint/parser": "^6.0.0",
-    "eslint": "^8.44.0",
+    "@types/node": "^20.4.2",
+    "@typescript-eslint/eslint-plugin": "6.1.0",
+    "@typescript-eslint/parser": "^6.1.0",
+    "eslint": "^8.45.0",
     "eslint-plugin-astro": "^0.27.2",
-    "eslint-plugin-svelte": "^2.32.2"
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-lit": "^1.8.3",
+    "eslint-plugin-svelte": "^2.32.2",
+    "eslint-plugin-wc": "^1.5.0"
   }
 }
