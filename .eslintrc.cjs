@@ -89,9 +89,6 @@ module.exports = {
     'no-constructor-return': 'error',
     'no-duplicate-imports': 'error',
     'no-empty-function': 'warn',
-    'no-extra-parens': ['warn', 'functions', {
-      'ignoreJSX': 'all'
-    }],
     'no-invalid-this': 'error',
     'no-loop-func': 'error',
     'no-mixed-operators': 'warn',
@@ -217,7 +214,6 @@ module.exports = {
         'no-constructor-return': 'error',
         'no-duplicate-imports': 'error',
         'no-empty-function': 'warn',
-        'no-extra-parens': ['warn', 'all'],
         'no-invalid-this': 'error',
         'no-loop-func': 'error',
         'no-mixed-operators': 'warn',
@@ -337,7 +333,6 @@ module.exports = {
         'no-constructor-return': 'error',
         'no-duplicate-imports': 'error',
         'no-empty-function': 'warn',
-        'no-extra-parens': ['warn', 'all'],
         'no-invalid-this': 'error',
         'no-loop-func': 'error',
         'no-mixed-operators': 'warn',
