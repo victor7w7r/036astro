@@ -16,7 +16,6 @@
     "@astrojs/tailwind": "^4.0.0",
     "@nanostores/persistent": "^0.9.1",
     "astro": "^2.9.0",
-    "astro-preload": "^1.1.2",
     "axios": "^1.4.0",
     "hooked-elements": "^2.2.2",
     "js-cookie": "^3.0.5",

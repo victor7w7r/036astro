@@ -20,9 +20,6 @@ dependencies:
   astro:
     specifier: ^2.9.0
     version: 2.9.0(@types/node@20.4.2)
-  astro-preload:
-    specifier: ^1.1.2
-    version: 1.1.2
   axios:
     specifier: ^1.4.0
     version: 1.4.0
@@ -1337,10 +1334,6 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
-
-  /astro-preload@1.1.2:
-    resolution: {integrity: sha512-96UHdATRp/K8iVysylYu0V5QMD3FXBqqj2+cUwHOmc0/+lstY5Xnb+A5UgmecbrfHpwMws5SQaOYZ1c63cQu/A==}
-    dev: false
 
   /astro@2.9.0(@types/node@20.4.2):
     resolution: {integrity: sha512-qD8hFvFrpLDA1/wGivP9YbKq7vfMfS1XPE9SyrrDaYFB/NXnZPqnwSXOxRD0AA4WSv9OAtUO3DV8dHFj9xWi/Q==}
