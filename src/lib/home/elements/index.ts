@@ -18,8 +18,11 @@ const path = (
   black: string
 ) => `/img/${isDark ? white : black}.png`;
 
-define<ImgReactiveProps, { isDark: boolean }>(
+define<ImgReactiveProps, { isDark: boolean, method: () => void }>(
   'img-reactive', {
+    method() {
+      return this.isDark;
+    },
     render() {
       this.isDark = theme.get().isDark;
       theme.subscribe(th => this.isDark = th.isDark);
