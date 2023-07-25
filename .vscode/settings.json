@@ -1,9 +1,7 @@
 {
-  "css.lint.unknownAtRules": "ignore",
-  "eslint.validate": [
-    "astro",
-    "svelte",
-    "typescript",
-    "typescriptreact"
-  ]
+  "editor.formatOnSave": true,
+  "prettier.documentSelectors": ["**/*.astro", "**/*.svelte"],
+  "[astro]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }

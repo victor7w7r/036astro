@@ -1,9 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: 'class',
-	content: [
-    './src/**/*.{astro,html,md,mdx,svelte,ts,tsx}'
-  ],
+  content: ['./src/**/*.{astro,html,md,mdx,svelte,ts,tsx}'],
   theme: {
     fontFamily: {
       amina: ['amina-reska'],
@@ -15,5 +13,5 @@ module.exports = {
       }
     }
   },
-	plugins: []
+  plugins: []
 };
