@@ -1,21 +1,22 @@
 {
   "name": "036astro",
-  "type": "module",
   "version": "0.0.1",
+  "type": "module",
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
+    "astro": "astro",
     "build": "astro build",
-    "preview": "astro preview",
+    "dev": "astro dev",
     "lint": "eslint . --ext .svelte,.astro,.ts --ignore-path .gitignore",
-    "astro": "astro"
+    "prettier": "prettier --check .",
+    "preview": "astro preview",
+    "start": "astro dev"
   },
   "dependencies": {
     "@astrojs/prefetch": "^0.3.0",
     "@astrojs/svelte": "^3.1.0",
     "@astrojs/tailwind": "^4.0.0",
     "@nanostores/persistent": "^0.9.1",
-    "astro": "^2.9.0",
+    "astro": "^2.9.2",
     "axios": "^1.4.0",
     "hooked-elements": "^2.2.2",
     "js-cookie": "^3.0.5",
@@ -28,15 +29,25 @@
   "devDependencies": {
     "@types/eslint": "8.44.0",
     "@types/js-cookie": "^3.0.3",
-    "@types/node": "^20.4.2",
-    "@typescript-eslint/eslint-plugin": "6.1.0",
-    "@typescript-eslint/parser": "^6.1.0",
+    "@types/node": "^20.4.4",
+    "@types/prettier": "^2.7.3",
+    "@typescript-eslint/eslint-plugin": "6.2.0",
+    "@typescript-eslint/parser": "^6.2.0",
     "astro-compress": "^1.1.49",
     "eslint": "^8.45.0",
+    "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-astro": "^0.27.2",
     "eslint-plugin-jsx-a11y": "^6.7.1",
     "eslint-plugin-lit": "^1.8.3",
+    "eslint-plugin-prettier": "^5.0.0",
     "eslint-plugin-svelte": "^2.32.4",
-    "eslint-plugin-wc": "^1.5.0"
+    "eslint-plugin-tailwindcss": "^3.13.0",
+    "eslint-plugin-wc": "^1.5.0",
+    "prettier": "^3.0.0",
+    "prettier-plugin-astro": "^0.11.0",
+    "prettier-plugin-pkg": "^0.18.0",
+    "prettier-plugin-sh": "^0.13.1",
+    "prettier-plugin-svelte": "^3.0.0",
+    "prettier-plugin-tailwindcss": "^0.4.1"
   }
 }

@@ -6,12 +6,12 @@ import '@/common/styles/header.css';
 
 <div class='flex items-center justify-center'>
   <nav id='navbar' class='navbar'>
-    <div class='max-w-7xl mx-auto px-2 sm:px-6 lg:px-8'>
+    <div class='mx-auto max-w-7xl px-2 sm:px-6 lg:px-8'>
       <div class='flex items-center justify-between'>
-        <div class='flex-1 flex items-stretch justify-start'>
-          <div class='flex-shrink-0 flex items-center'>
-            <img src='/favicon.svg' class='block h-8 w-auto mr-5' alt='' />
-            <a href='/' class='-ml-2 font-medium adaptable-text' rel='prefetch'>
+        <div class='flex flex-1 items-stretch justify-start'>
+          <div class='flex shrink-0 items-center'>
+            <img src='/favicon.svg' class='mr-5 block h-8 w-auto' alt='' />
+            <a href='/' class='adaptable-text -ml-2 font-medium' rel='prefetch'>
               Astro + TS Template
             </a>
           </div>
@@ -32,9 +32,7 @@ import '@/common/styles/header.css';
   define('nav', (el: HTMLElement) =>
     useEffect(() => {
       el.className = `navbar ${theme.get().control}`;
-      theme.subscribe(th =>
-        el.className = `navbar ${th.control}`
-      );
+      theme.subscribe(th => (el.className = `navbar ${th.control}`));
     })
   );
 </script>

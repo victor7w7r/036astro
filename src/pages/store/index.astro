@@ -10,35 +10,26 @@ import '@/store/styles/store.css';
   <div class='page-container'>
     <div class='store-container'>
       <div id='card-container' class='card-container'>
-        <h3 class='store-title'>
-          Write anything in this form and send
-        </h3>
-        <div class='relative z-0 w-64 mx-auto mt-6'>
+        <h3 class='store-title'>Write anything in this form and send</h3>
+        <div class='relative z-0 mx-auto mt-6 w-64'>
           <input
             type='text'
-            class='peer input-design inputable'
+            id='inputable'
+            class='input-design peer'
             placeholder=' '
           />
-          <label for='floating' class='floating-design'>
-            here
-          </label>
+          <label for='floating' class='floating-design'> here</label>
         </div>
         <div id='send-button' class='store-btn'></div>
         <CookieState client:load />
         <StorageState client:load />
       </div>
       <div class='centered-button-ctn'>
-        <a
-          class='standard-button'
-          href='/'
-          rel='prefetch'
-        >
-          Go to Store
-        </a>
+        <a class='standard-button' href='/' rel='prefetch'> Go to Store</a>
       </div>
     </div>
   </div>
 </Layout>
 
-<script src='@/common/elements' />
-<script src='@/store/elements' />
+<script src='@/common/elements'></script>
+<script src='@/store/elements'></script>

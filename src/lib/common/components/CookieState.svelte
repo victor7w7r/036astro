@@ -1,9 +1,8 @@
-<script lang='ts'>
+<script lang="ts">
   import Cookie from 'js-cookie';
 
   const data = Cookie.get('data');
-  const design =
-    'adaptable-center-text text-base lg:text-xl font-semibold';
+  const design = 'adaptable-center-text text-base lg:text-xl font-semibold';
 </script>
 
 <p class={design}>

@@ -1,8 +1,7 @@
-<script lang='ts'>
+<script lang="ts">
   import { getBitcoin } from '@/home/services';
 
-  const textStyle =
-    'adaptable-center-text text-base lg:text-lg font-semibold';
+  const textStyle = 'adaptable-center-text text-base lg:text-lg font-semibold';
 
   const btc = getBitcoin();
 </script>

@@ -1,4 +1,4 @@
-<script lang='ts'>
+<script lang="ts">
   import { data } from '@/common/stores/data-store';
 
   const design = 'adaptable-center-text text-base lg:text-xl font-semibold';

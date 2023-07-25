@@ -7,8 +7,6 @@ const className = 'card-container';
 define('div#card-container', (el: HTMLElement) =>
   useEffect(() => {
     el.className = `${className} ${theme.get().control}`;
-    theme.subscribe(th =>
-      el.className = `${className} ${th.control}`
-    );
+    theme.subscribe(th => (el.className = `${className} ${th.control}`));
   })
 );

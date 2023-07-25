@@ -6,10 +6,5 @@ import svelte from '@astrojs/svelte';
 import tailwind from '@astrojs/tailwind';
 
 export default defineConfig({
-  integrations: [
-    compress(),
-    prefetch(),
-    svelte(),
-    tailwind()
-  ]
+  integrations: [compress(), prefetch(), svelte(), tailwind()]
 });

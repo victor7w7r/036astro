@@ -1,5 +1,4 @@
 {
-  "extends": "./tsconfig.lint.json",
   "compilerOptions": {
     "allowJs": false,
     "baseUrl": ".",
@@ -13,9 +12,7 @@
     "paths": { "@/*": ["src/lib/*"] },
     "resolveJsonModule": true,
     "skipLibCheck": true,
-    "target": "ES2020",
-    "verbatimModuleSyntax": true
+    "target": "ES2020"
   },
-  "files": ["./.eslintrc.cjs"],
-  "include": ["src", "./*.d.ts"]
+  "extends": "./tsconfig.app.json"
 }

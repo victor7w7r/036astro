@@ -1,0 +1,25 @@
+{
+  "arrowParens": "avoid",
+  "astroAllowShorthand": false,
+  "jsxSingleQuote": true,
+  "quoteProps": "preserve",
+  "overrides": [
+    {
+      "files": "*.astro",
+      "options": { "parser": "astro" }
+    },
+    {
+      "files": "*.svelte",
+      "options": { "parser": "svelte" }
+    }
+  ],
+  "plugins": [
+    "prettier-plugin-astro",
+    "prettier-plugin-pkg",
+    "prettier-plugin-sh",
+    "prettier-plugin-svelte",
+    "prettier-plugin-tailwindcss"
+  ],
+  "singleQuote": true,
+  "trailingComma": "none"
+}

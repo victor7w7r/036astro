@@ -11,7 +11,4 @@ node_modules
 .gitignore
 Dockerfile
 LICENSE
-package.json
 pnpm-lock.yaml
-README.md
-tsconfig.json
