@@ -19,8 +19,10 @@ $ git checkout blank
 ## Extra Packages
 
 - axios: Promise based HTTP client for the browser and node.js
+- carbonium: One kilobyte library for easy DOM manipulation
 - nanostores: A tiny (less than 1kb) state manager using observables and persistent stores
-- uhtml/uce/hooked-elements: Tiny libraries for DOM manipulation in client side
+- uce: µhtml based Custom Elements
+- sinuous: Tiny reactive UI library
 - svelte: Component Framework
 - tailwindcss: Utility-first CSS framework for rapidly building custom user interfaces
 
