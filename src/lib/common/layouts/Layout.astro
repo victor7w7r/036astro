@@ -8,7 +8,7 @@ const { title } = Astro.props;
 import '@/common/styles/global.css';
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang='en'>
   <head>
     <meta charset='UTF-8' />
@@ -27,19 +27,16 @@ import '@/common/styles/global.css';
 </html>
 
 <script>
-  import { define, useEffect } from 'hooked-elements';
+  import { $ } from 'carbonium';
 
   import { theme } from '@/common/stores';
 
   const className = 'app min-h-screen transition-colors duration-1000';
+  const main = $('main');
 
-  define('main', (el: HTMLElement) =>
-    useEffect(() => {
-      if (theme.get().isDark) document.body.classList.add('dark');
-      el.className = `${className} ${theme.get().white} ${theme.get().dark}`;
-      theme.subscribe(
-        th => (el.className = `${className} ${th.white} ${th.dark}`)
-      );
-    })
+  if (theme.get().isDark) document.body.classList.add('dark');
+  main.className = `${className} ${theme.get().white} ${theme.get().dark}`;
+  theme.subscribe(
+    th => (main.className = `${className} ${th.white} ${th.dark}`)
   );
 </script>

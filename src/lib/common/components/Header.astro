@@ -25,14 +25,12 @@ import '@/common/styles/header.css';
 </div>
 
 <script>
-  import { define, useEffect } from 'hooked-elements';
+  import { $ } from 'carbonium';
 
   import { theme } from '@/common/stores';
 
-  define('nav', (el: HTMLElement) =>
-    useEffect(() => {
-      el.className = `navbar ${theme.get().control}`;
-      theme.subscribe(th => (el.className = `navbar ${th.control}`));
-    })
-  );
+  const nav = $('nav');
+
+  nav.className = `navbar ${theme.get().control}`;
+  theme.subscribe(th => (nav.className = `navbar ${th.control}`));
 </script>
