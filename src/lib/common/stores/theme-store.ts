@@ -41,7 +41,7 @@ export const toggle = (): void => {
         }
   );
 
-  document.body.classList.toggle('dark');
+  document.documentElement.classList.toggle('dark');
 };
 
 export const changeSelector = (selector: string): void => {

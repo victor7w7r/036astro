@@ -1,5 +1,5 @@
 ---
-import CookieState from '@/common/components/CookieState.svelte';
+import { CookieState } from '@/common/components/cookie-state';
 import StorageState from '@/common/components/StorageState.svelte';
 import Layout from '@/common/layouts/Layout.astro';
 
@@ -21,11 +21,11 @@ import '@/store/styles/store.css';
           <label for='floating' class='floating-design'> here</label>
         </div>
         <div id='send-button' class='store-btn'></div>
-        <CookieState client:load />
+        <CookieState />
         <StorageState client:load />
       </div>
       <div class='centered-button-ctn'>
-        <a class='standard-button' href='/' rel='prefetch'> Go to Store</a>
+        <a class='standard-button' href='/' rel='prefetch'>Go to Store</a>
       </div>
     </div>
   </div>

@@ -7,21 +7,21 @@
 </script>
 
 <div class="relative">
-  <div class="flex items-center justify-center w-full">
+  <div class="flex w-full items-center justify-center">
     <label
       for="checked-toggle"
-      class="inline-flex items-center mb-4 cursor-pointer"
+      class="mb-4 inline-flex cursor-pointer items-center"
     >
       <input
         type="checkbox"
         value=""
         id="checked-toggle"
-        class="sr-only peer"
+        class="peer sr-only"
         checked={isDark}
         on:change={toggle}
       />
-      <div class={`${togglePeer} peer toggle-design`}></div>
-      <span class="ml-3 text-sm font-medium adaptable-text select-none">
+      <div class={`${togglePeer} toggle-design peer`}></div>
+      <span class="adaptable-text ml-3 select-none text-sm font-medium">
         Dark Mode
       </span>
     </label>

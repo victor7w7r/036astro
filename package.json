@@ -12,14 +12,13 @@
     "start": "astro dev"
   },
   "dependencies": {
-    "@astrojs/svelte": "^4.0.4",
-    "@astrojs/tailwind": "^5.0.2",
+    "@astrojs/svelte": "^5.0.0",
+    "@astrojs/tailwind": "^5.0.3",
     "@builder.io/qwik": "^1.2.19",
     "@nanostores/persistent": "^0.9.1",
     "@qwikdev/astro": "^0.2.8",
-    "astro": "^3.6.4",
+    "astro": "^4.0.1",
     "axios": "^1.6.2",
-    "carbonium": "1.2.4",
     "js-cookie": "^3.0.5",
     "nanostores": "^0.9.5",
     "sinuous": "0.32.1",
@@ -48,6 +47,6 @@
     "prettier-plugin-pkg": "^0.18.0",
     "prettier-plugin-sh": "^0.13.1",
     "prettier-plugin-svelte": "^3.1.2",
-    "prettier-plugin-tailwindcss": "^0.5.7"
+    "prettier-plugin-tailwindcss": "^0.5.8"
   }
 }

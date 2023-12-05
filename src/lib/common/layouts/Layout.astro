@@ -1,5 +1,6 @@
 ---
 import Header from '@/common/components/Header.astro';
+import Head from '@/common/components/Head.astro';
 
 export type Props = { title: string };
 
@@ -11,32 +12,23 @@ import '@/common/styles/global.css';
 <!doctype html>
 <html lang='en'>
   <head>
-    <meta charset='UTF-8' />
-    <meta name='description' content='Astro description' />
-    <meta name='viewport' content='width=device-width' />
-    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
-    <meta name='generator' content={Astro.generator} />
-    <title>{title}</title>
+    <Head title={title} />
   </head>
   <body>
     <main>
       <slot />
       <Header />
     </main>
+    <script>
+      import { theme } from '@/common/stores';
+
+      const className = 'app min-h-screen transition-colors duration-1000';
+      const main = document.querySelector('main');
+
+      main.className = `${className} ${theme.get().white} ${theme.get().dark}`;
+      theme.subscribe(
+        th => (main.className = `${className} ${th.white} ${th.dark}`)
+      );
+    </script>
   </body>
 </html>
-
-<script>
-  import { $ } from 'carbonium';
-
-  import { theme } from '@/common/stores';
-
-  const className = 'app min-h-screen transition-colors duration-1000';
-  const main = $('main');
-
-  if (theme.get().isDark) document.body.classList.add('dark');
-  main.className = `${className} ${theme.get().white} ${theme.get().dark}`;
-  theme.subscribe(
-    th => (main.className = `${className} ${th.white} ${th.dark}`)
-  );
-</script>

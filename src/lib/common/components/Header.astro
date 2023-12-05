@@ -25,11 +25,9 @@ import '@/common/styles/header.css';
 </div>
 
 <script>
-  import { $ } from 'carbonium';
-
   import { theme } from '@/common/stores';
 
-  const nav = $('nav');
+  const nav = document.querySelector('nav');
 
   nav.className = `navbar ${theme.get().control}`;
   theme.subscribe(th => (nav.className = `navbar ${th.control}`));

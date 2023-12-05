@@ -1,11 +1,11 @@
 import Cookies from 'js-cookie';
-import { $ } from 'carbonium';
 import { html } from 'sinuous';
 
 import { data } from '@/common/stores';
 
 const send = () => {
-  const value = $<HTMLInputElement>('#inputable').value;
+  const value =
+    document.querySelector<HTMLInputElement>('#card-inputable')?.value ?? '';
   Cookies.set('data', value);
   data.set(value);
 };

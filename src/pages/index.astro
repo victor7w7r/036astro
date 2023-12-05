@@ -1,7 +1,7 @@
 ---
 import Layout from '@/common/layouts/Layout.astro';
 
-import CookieState from '@/common/components/CookieState.svelte';
+import { CookieState } from '@/common/components/cookie-state';
 import StorageState from '@/common/components/StorageState.svelte';
 import Call from '@/home/components/Call.svelte';
 import Spinner from '@/home/components/Spinner.astro';
@@ -36,7 +36,7 @@ import '@/home/styles/home.css';
           <img alt='' id='imagetwo' class='' />
         </div>
         <div id='card-container' class='card-container'>
-          <CookieState client:load />
+          <CookieState />
           <StorageState client:load />
           <h3 class='adaptable-center-text-bold'>Lets see bitcoin price</h3>
           <Call client:load><Spinner /></Call>
