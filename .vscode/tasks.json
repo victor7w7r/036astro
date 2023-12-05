@@ -1,0 +1,16 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "group": "build",
+      "label": "tsc: inspección: tsconfig.json",
+      "option": "watch",
+      "problemMatcher": ["$tsc-watch"],
+      "runOptions": {
+        "runOn": "folderOpen"
+      },
+      "type": "typescript",
+      "tsconfig": "tsconfig.json"
+    }
+  ]
+}
