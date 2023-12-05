@@ -5,7 +5,7 @@ import { data } from '@/common/stores';
 
 const send = () => {
   const value =
-    document.querySelector<HTMLInputElement>('#card-inputable')?.value ?? '';
+    document.querySelector<HTMLInputElement>('#inputable')?.value ?? '';
   Cookies.set('data', value);
   data.set(value);
 };
