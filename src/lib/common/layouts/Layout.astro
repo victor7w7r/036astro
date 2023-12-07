@@ -1,12 +1,12 @@
 ---
-import Header from '@/common/components/Header.astro';
-import Head from '@/common/components/Head.astro';
+import Header from '@/common/components/Header/Header.astro';
+import Head from '@/common/components/Head/Head.astro';
 
 export type Props = { title: string };
 
 const { title } = Astro.props;
 
-import '@/common/styles/global.css';
+import '@core/styles/global.css';
 ---
 
 <!doctype html>
@@ -25,9 +25,9 @@ import '@/common/styles/global.css';
       const className = 'app min-h-screen transition-colors duration-1000';
       const main = document.querySelector('main');
 
-      main.className = `${className} ${theme.get().white} ${theme.get().dark}`;
+      main!.className = `${className} ${theme.get().white} ${theme.get().dark}`;
       theme.subscribe(
-        th => (main.className = `${className} ${th.white} ${th.dark}`)
+        th => (main!.className = `${className} ${th.white} ${th.dark}`)
       );
     </script>
   </body>

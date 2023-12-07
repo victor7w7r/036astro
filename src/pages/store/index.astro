@@ -1,6 +1,6 @@
 ---
-import { CookieState } from '@/common/components/cookie-state';
-import StorageState from '@/common/components/StorageState.svelte';
+import { CookieState } from '@/common/components/cookie-state/cookie-state';
+import StorageState from '@/common/components/storage-state/StorageState.svelte';
 import Layout from '@/common/layouts/Layout.astro';
 
 import '@/store/styles/store.css';
@@ -31,5 +31,23 @@ import '@/store/styles/store.css';
   </div>
 </Layout>
 
-<script src='@/common/elements'></script>
-<script src='@/store/elements'></script>
+<script src='@/common/scripts'></script>
+<script>
+  import Cookies from 'js-cookie';
+  import { html } from 'sinuous';
+
+  import { data } from '@/common/stores';
+
+  const send = () => {
+    const value =
+      document.querySelector<HTMLInputElement>('#inputable')?.value ?? '';
+    Cookies.set('data', value);
+    data.set(value);
+  };
+
+  document
+    .querySelector('#send-button')
+    ?.append(html`
+      <button class="standard-button" onclick=${send}>Send</button>
+    `);
+</script>

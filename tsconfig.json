@@ -11,7 +11,10 @@
     "module": "ESNext",
     "moduleResolution": "node",
     "noEmit": true,
-    "paths": { "@/*": ["src/lib/*"] },
+    "paths": {
+      "@/*": ["src/lib/*"],
+      "@core/*": ["src/core/*"]
+    },
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "target": "ES2020"

@@ -14,10 +14,13 @@ module.exports = {
     'plugin:astro/recommended',
     'plugin:astro/jsx-a11y-strict',
     'plugin:lit/recommended',
+    'plugin:qwik/strict',
+    'plugin:react/recommended',
+    'plugin:react/jsx-runtime',
     'plugin:svelte/recommended',
+    'plugin:tailwindcss/recommended',
     'plugin:wc/recommended',
-    'plugin:wc/best-practice',
-    'plugin:tailwindcss/recommended'
+    'plugin:wc/best-practice'
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -90,7 +93,25 @@ module.exports = {
     'prefer-const': 'warn',
     'prefer-spread': 'warn',
     'prefer-template': 'warn',
+    'qwik/jsx-img': 'off',
+    'react/boolean-prop-naming': 'warn',
+    'react/button-has-type': 'warn',
+    'react/default-props-match-prop-types': 'warn',
+    'react/jsx-boolean-value': 'warn',
+    'react/jsx-fragments': ['warn', 'syntax'],
+    'react/jsx-no-script-url': 'error',
+    'react/jsx-no-useless-fragment': 'error',
+    'react/hook-use-state': 'warn',
+    'react/no-deprecated': 'warn',
+    'react/no-unknown-property': 'off',
+    'react/no-unstable-nested-components': 'warn',
+    'react/no-unused-prop-types': 'warn',
+    'react/style-prop-object': 'warn',
+    'react/void-dom-elements-no-children': 'error',
     'yoda': ['error', 'never', { 'exceptRange': false }]
+  },
+  settings: {
+    'react': { 'version': '18' }
   },
   overrides: [
     {

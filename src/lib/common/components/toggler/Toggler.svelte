@@ -1,7 +1,7 @@
 <script lang="ts">
   import { theme, toggle } from '@/common/stores/theme-store';
 
-  import '@/common/styles/toggler.css';
+  import './toggler.css';
 
   $: ({ isDark, togglePeer } = $theme);
 </script>

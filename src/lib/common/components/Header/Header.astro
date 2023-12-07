@@ -1,7 +1,7 @@
 ---
-import Toggler from './Toggler.svelte';
+import Toggler from '../toggler/Toggler.svelte';
 
-import '@/common/styles/header.css';
+import './header.css';
 ---
 
 <div class='flex items-center justify-center'>
@@ -29,6 +29,6 @@ import '@/common/styles/header.css';
 
   const nav = document.querySelector('nav');
 
-  nav.className = `navbar ${theme.get().control}`;
-  theme.subscribe(th => (nav.className = `navbar ${th.control}`));
+  nav!.className = `navbar ${theme.get().control}`;
+  theme.subscribe(th => (nav!.className = `navbar ${th.control}`));
 </script>
