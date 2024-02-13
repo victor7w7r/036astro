@@ -1,9 +1,8 @@
-import { defineConfig } from 'astro/config';
-import compress from 'astro-compress';
-import svelte from '@astrojs/svelte';
-import tailwind from '@astrojs/tailwind';
-import qwikdev from '@qwikdev/astro';
+import { defineConfig } from 'astro/config'
+import compress from 'astro-compress'
+import tailwind from '@astrojs/tailwind'
+import qwikdev from '@qwikdev/astro'
 
 export default defineConfig({
-  integrations: [compress(), svelte(), tailwind(), qwikdev()]
-});
+  integrations: [compress(), tailwind(), qwikdev()]
+})

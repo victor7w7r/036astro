@@ -1,6 +1,6 @@
 {
   "editor.formatOnSave": true,
-  "prettier.documentSelectors": ["**/*.astro", "**/*.svelte"],
+  "prettier.documentSelectors": ["**/*.astro"],
   "[astro]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
