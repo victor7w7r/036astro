@@ -1,2 +1,2 @@
-export * from './data-store';
-export * from './theme-store';
+export * from './data-store'
+export * from './theme-store'

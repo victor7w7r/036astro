@@ -1,15 +1,15 @@
 /* eslint-disable no-undefined */
-import { component$, useSignal, useVisibleTask$ } from '@builder.io/qwik';
-import Cookie from 'js-cookie';
+import { component$, useSignal, useVisibleTask$ } from '@builder.io/qwik'
+import Cookie from 'js-cookie'
 
-const design = 'adaptable-center-text text-base lg:text-xl font-semibold';
+const design = 'adaptable-center-text text-base lg:text-xl font-semibold'
 
 export const CookieState = component$(() => {
-  const data = useSignal<string | undefined>('');
+  const data = useSignal<string | undefined>('')
 
   useVisibleTask$(() => {
-    data.value = Cookie.get('data');
-  });
+    data.value = Cookie.get('data')
+  })
 
   return (
     <p class={design}>
@@ -22,5 +22,5 @@ export const CookieState = component$(() => {
         <>Not yet.</>
       )}
     </p>
-  );
-});
+  )
+})

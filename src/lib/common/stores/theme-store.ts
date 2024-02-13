@@ -1,6 +1,6 @@
-import { persistentAtom } from '@nanostores/persistent';
+import { persistentAtom } from '@nanostores/persistent'
 
-import type { Theme } from '@/common/models';
+import type { Theme } from '@/common/models'
 
 export const theme = persistentAtom<Theme>(
   'theme',
@@ -15,13 +15,13 @@ export const theme = persistentAtom<Theme>(
     encode: JSON.stringify,
     decode: JSON.parse
   }
-);
+)
 
-export const setDark = (isDark: boolean): void =>
-  theme.set({ ...theme.get(), isDark });
+export const setDark = (isDark: boolean) =>
+  theme.set({ ...theme.get(), isDark })
 
-export const toggle = (): void => {
-  const current = theme.get();
+export const toggle = () => {
+  const current = theme.get()
 
   theme.set(
     current.isDark
@@ -39,13 +39,21 @@ export const toggle = (): void => {
           control: 'bg-slate-700/30',
           togglePeer: 'peer-checked:bg-dark'
         }
-  );
+  )
 
-  document.documentElement.classList.toggle('dark');
-};
+  document.dispatchEvent(
+    new CustomEvent('isDarkToggle', { detail: theme.get().isDark })
+  )
 
-export const changeSelector = (selector: string): void => {
-  const current = theme.get();
+  document.dispatchEvent(
+    new CustomEvent('togglePeer', { detail: theme.get().togglePeer })
+  )
+
+  document.documentElement.classList.toggle('dark')
+}
+
+export const changeSelector = (selector: string) => {
+  const current = theme.get()
 
   theme.set(
     current.isDark
@@ -61,13 +69,13 @@ export const changeSelector = (selector: string): void => {
           control: `bg-${selector}-700/30`,
           togglePeer: `peer-checked:bg-${selector}-300`
         }
-  );
-};
+  )
+}
 
-export const changeBlue = (): void => changeSelector('sky');
+export const changeBlue = () => changeSelector('sky')
 
-export const changePurple = (): void => changeSelector('purple');
+export const changePurple = () => changeSelector('purple')
 
-export const changeRed = (): void => changeSelector('red');
+export const changeRed = () => changeSelector('red')
 
-export const changeEmerald = (): void => changeSelector('emerald');
+export const changeEmerald = () => changeSelector('emerald')

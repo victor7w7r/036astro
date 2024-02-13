@@ -7,19 +7,15 @@
     {
       "files": "*.astro",
       "options": { "parser": "astro" }
-    },
-    {
-      "files": "*.svelte",
-      "options": { "parser": "svelte" }
     }
   ],
   "plugins": [
     "prettier-plugin-astro",
     "prettier-plugin-pkg",
     "prettier-plugin-sh",
-    "prettier-plugin-svelte",
     "prettier-plugin-tailwindcss"
   ],
+  "semi": false,
   "singleQuote": true,
   "trailingComma": "none"
 }

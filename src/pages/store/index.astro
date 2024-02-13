@@ -1,9 +1,9 @@
 ---
-import { CookieState } from '@/common/components/cookie-state/cookie-state';
-import StorageState from '@/common/components/storage-state/StorageState.svelte';
-import Layout from '@/common/layouts/Layout.astro';
+import { CookieState } from '@/common/components/cookie-state/cookie-state'
+import { StorageState } from '@/common/components/storage-state/storage-state'
+import Layout from '@/common/layouts/Layout.astro'
 
-import '@/store/styles/store.css';
+import '@/store/styles/store.css'
 ---
 
 <Layout title='Store Page'>
@@ -22,7 +22,7 @@ import '@/store/styles/store.css';
         </div>
         <div id='send-button' class='store-btn'></div>
         <CookieState />
-        <StorageState client:load />
+        <StorageState />
       </div>
       <div class='centered-button-ctn'>
         <a class='standard-button' href='/' rel='prefetch'>Go to Store</a>
@@ -33,21 +33,22 @@ import '@/store/styles/store.css';
 
 <script src='@/common/scripts'></script>
 <script>
-  import Cookies from 'js-cookie';
-  import { html } from 'sinuous';
+  import Cookies from 'js-cookie'
+  import { html } from 'sinuous'
 
-  import { data } from '@/common/stores';
+  import { data } from '@/common/stores'
 
   const send = () => {
     const value =
-      document.querySelector<HTMLInputElement>('#inputable')?.value ?? '';
-    Cookies.set('data', value);
-    data.set(value);
-  };
+      document.querySelector<HTMLInputElement>('#inputable')?.value ?? ''
+    Cookies.set('data', value)
+    data.set(value)
+    document.dispatchEvent(new CustomEvent('data', { detail: value }))
+  }
 
   document
     .querySelector('#send-button')
     ?.append(html`
       <button class="standard-button" onclick=${send}>Send</button>
-    `);
+    `)
 </script>

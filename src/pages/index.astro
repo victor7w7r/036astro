@@ -1,12 +1,12 @@
 ---
-import Layout from '@/common/layouts/Layout.astro';
+import Layout from '@/common/layouts/Layout.astro'
 
-import { CookieState } from '@/common/components/cookie-state/cookie-state';
-import StorageState from '@/common/components/storage-state/StorageState.svelte';
-import Call from '@/home/components/Call.svelte';
-import Spinner from '@/home/components/Spinner.astro';
+import { CookieState } from '@/common/components/cookie-state/cookie-state'
+import { StorageState } from '@/common/components/storage-state/storage-state'
+import { Call } from '@/home/components/call'
+import Spinner from '@/home/components/Spinner.astro'
 
-import '@/home/styles/home.css';
+import '@/home/styles/home.css'
 ---
 
 <Layout title='Home Page'>
@@ -16,7 +16,7 @@ import '@/home/styles/home.css';
         <div id='card-container' class='card-container'>
           <p class='adaptable-amina'>Made with love by</p>
           <img-reactive
-            style='scale-75 lg:scale-80'
+            classstyle='scale-75 lg:scale-80'
             white='brandwhite'
             black='brand'
           >
@@ -28,7 +28,7 @@ import '@/home/styles/home.css';
             Roboto Font works with
           </p>
           <img-reactive
-            style='scale-50 tall:scale-65 lg:scale-65'
+            classstyle='scale-50 tall:scale-65 lg:scale-65'
             white='tailwindwhite'
             black='tailwind'
           >
@@ -37,9 +37,9 @@ import '@/home/styles/home.css';
         </div>
         <div id='card-container' class='card-container'>
           <CookieState />
-          <StorageState client:load />
+          <StorageState />
           <h3 class='adaptable-center-text-bold'>Lets see bitcoin price</h3>
-          <Call client:load><Spinner /></Call>
+          <Call>saddsa<Spinner /></Call>
         </div>
       </div>
       <div class='centered-button-ctn'>
@@ -54,8 +54,8 @@ import '@/home/styles/home.css';
 <script src='@/common/scripts'></script>
 
 <script>
-  import { html } from 'sinuous';
-  import { define } from 'uce';
+  import { html } from 'sinuous'
+  import { define } from 'uce'
 
   import {
     changeBlue,
@@ -63,36 +63,36 @@ import '@/home/styles/home.css';
     changeRed,
     changeEmerald,
     theme
-  } from '@/common/stores';
+  } from '@/common/stores'
 
   type ImgReactiveProps = {
-    style: string;
-    white: string;
-    black: string;
-  };
+    classstyle: string
+    white: string
+    black: string
+  }
 
   const path = (isDark: boolean, white: string, black: string) =>
-    `/img/${isDark ? white : black}.png`;
+    `/img/${isDark ? white : black}.png`
 
   define<ImgReactiveProps, { isDark: boolean }>('img-reactive', {
     init() {
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      theme.subscribe(_ => this.render());
+      theme.subscribe(_ => this.render())
     },
     render() {
-      this.isDark = theme.get().isDark;
+      this.isDark = theme.get().isDark
       this.html`<img
         alt=''
-        class='${this.props.style}'
+        class='${this.props.classstyle}'
         src='${path(this.isDark, this.props.white, this.props.black)}'
-      />`;
+      />`
     }
-  });
+  })
 
   document.querySelector('#buttons-selector')?.append(html`
     <button class="blue-button" onclick=${changeBlue}></button>
     <button class="purple-button" onclick=${changePurple}></button>
     <button class="red-button" onclick=${changeRed}></button>
     <button class="emerald-button" onclick=${changeEmerald}></button>
-  `);
+  `)
 </script>
