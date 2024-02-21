@@ -10,43 +10,41 @@ import '@/home/styles/home.css'
 ---
 
 <Layout title='Home Page'>
-  <div class='page-container'>
-    <div class='home-container'>
-      <div class='card-flex'>
-        <div id='card-container' class='card-container'>
-          <p class='adaptable-amina'>Made with love by</p>
-          <img-reactive
-            classstyle='scale-75 lg:scale-80'
-            white='brandwhite'
-            black='brand'
-          >
-          </img-reactive>
-          <h3 class='adaptable-center-text-base mb-4 font-semibold'>
-            Happy Hacking! with Typescript?
-          </h3>
-          <p class='adaptable-center-text-base mb-8 font-roboto'>
-            Roboto Font works with
-          </p>
-          <img-reactive
-            classstyle='scale-50 tall:scale-65 lg:scale-65'
-            white='tailwindwhite'
-            black='tailwind'
-          >
-          </img-reactive>
-          <img alt='' id='imagetwo' class='' />
-        </div>
-        <div id='card-container' class='card-container'>
-          <CookieState />
-          <StorageState />
-          <h3 class='adaptable-center-text-bold'>Lets see bitcoin price</h3>
-          <Call>saddsa<Spinner /></Call>
-        </div>
+  <div class='mt-10 flex h-min flex-col justify-center backdrop-blur-xl'>
+    <div class='card-flex'>
+      <div id='card-container' class='card-container'>
+        <p class='adaptable-amina'>Made with love by</p>
+        <img-reactive
+          classstyle='scale-75 lg:scale-80'
+          white='brandwhite'
+          black='brand'
+        >
+        </img-reactive>
+        <h3 class='adaptable-center-text-base mb-4 font-semibold'>
+          Happy Hacking! with Typescript?
+        </h3>
+        <p class='adaptable-center-text-base mb-8 font-roboto'>
+          Roboto Font works with
+        </p>
+        <img-reactive
+          classstyle='scale-50 tall:scale-65 lg:scale-65'
+          white='tailwindwhite'
+          black='tailwind'
+        >
+        </img-reactive>
+        <img alt='' id='imagetwo' class='' />
       </div>
-      <div class='centered-button-ctn'>
-        <a class='standard-button' href='/store' rel='prefetch'> Go to store</a>
+      <div id='card-container' class='card-container'>
+        <CookieState />
+        <StorageState />
+        <h3 class='adaptable-center-text-bold'>Lets see bitcoin price</h3>
+        <Call>saddsa<Spinner /></Call>
       </div>
-      <div id='buttons-selector' class='mx-auto mt-3 flex w-fit flex-row gap-7'>
-      </div>
+    </div>
+    <div class='centered-button-ctn'>
+      <a class='standard-button' href='/store' rel='prefetch'> Go to store</a>
+    </div>
+    <div id='buttons-selector' class='mx-auto mt-3 flex w-fit flex-row gap-7'>
     </div>
   </div>
 </Layout>

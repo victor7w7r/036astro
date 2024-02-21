@@ -25,9 +25,7 @@ const { title } = Astro.props
     }
   })()
 
-  if (theme.isDark) {
-    document.documentElement.classList.add('dark')
-  } else {
-    document.documentElement.classList.remove('dark')
-  }
+  theme.isDark
+    ? document.documentElement.classList.add('dark')
+    : document.documentElement.classList.remove('dark')
 </script>

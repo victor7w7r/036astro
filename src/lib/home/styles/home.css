@@ -9,12 +9,6 @@
   font-style: normal;
 }
 
-.home-container {
-  @apply flex h-2/6
-  w-5/6 flex-col
-  lg:h-3/6 lg:w-full;
-}
-
 .card-flex {
   @apply mx-auto flex
   flex-col content-center

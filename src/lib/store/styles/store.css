@@ -1,8 +1,3 @@
-.store-container {
-  @apply flex w-full flex-col
-  items-center justify-center;
-}
-
 .store-btn {
   @apply my-8 flex items-center
   justify-center tall:my-12;

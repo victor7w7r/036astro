@@ -15,9 +15,9 @@ import '@core/styles/global.css'
     <Head title={title} />
   </head>
   <body>
-    <main>
-      <slot />
+    <main class='flex h-screen flex-col'>
       <Header />
+      <slot />
     </main>
     <script>
       import { theme } from '@/common/stores'

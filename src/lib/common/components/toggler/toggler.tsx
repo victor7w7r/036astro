@@ -38,25 +38,23 @@ export const Toggler = component$(() => {
 
   return (
     <div class='relative'>
-      <div class='flex w-full items-center justify-center'>
-        <label
-          for='checked-toggle'
-          class='mb-4 inline-flex cursor-pointer items-center'
-        >
-          <input
-            type='checkbox'
-            value=''
-            id='checked-toggle'
-            class='peer sr-only'
-            checked={isDark.value}
-            onChange$={$(toggle)}
-          />
-          <div class={`${togglePeer.value} toggle-design peer`}></div>
-          <span class='adaptable-text ml-3 select-none text-sm font-medium'>
-            Dark Mode
-          </span>
-        </label>
-      </div>
+      <label
+        for='checked-toggle'
+        class='mb-4 inline-flex cursor-pointer items-center'
+      >
+        <input
+          type='checkbox'
+          value=''
+          id='checked-toggle'
+          class='peer sr-only'
+          checked={isDark.value}
+          onChange$={$(toggle)}
+        />
+        <div class={`${togglePeer.value} toggle-design peer`}></div>
+        <span class='adaptable-text ml-3 select-none text-sm font-medium'>
+          Dark Mode
+        </span>
+      </label>
     </div>
   )
 })
