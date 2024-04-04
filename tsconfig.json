@@ -10,8 +10,8 @@
     "moduleResolution": "node",
     "noEmit": true,
     "paths": {
-      "@/*": ["src/lib/*"],
-      "@core/*": ["src/core/*"]
+      "@/*": ["src/features/*"],
+      "~/*": ["src/core/*"]
     },
     "resolveJsonModule": true,
     "skipLibCheck": true,

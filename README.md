@@ -1,6 +1,6 @@
 # 036astro
 
-A template for Astro with essential packages and strict TypeScript
+A clean architecture template for Astro with essential packages and strict TypeScript
 
 ## Why Typescript?
 
@@ -19,11 +19,10 @@ $ git checkout blank
 ## Extra Packages
 
 - axios: Promise based HTTP client for the browser and node.js
-- carbonium: One kilobyte library for easy DOM manipulation
+- awilix: Extremely powerful Dependency Injection (DI) container for JavaScript/TypeScript projects
 - nanostores: A tiny (less than 1kb) state manager using observables and persistent stores
 - uce: µhtml based Custom Elements
-- sinuous: Tiny reactive UI library
-- svelte: Component Framework
+- solidjs: A declarative, efficient, and flexible JavaScript library for building user interfaces
 - tailwindcss: Utility-first CSS framework for rapidly building custom user interfaces
 
 ### Run and Develop (Consider using pnpm)
