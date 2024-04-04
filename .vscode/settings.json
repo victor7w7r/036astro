@@ -4,7 +4,6 @@
   "[astro]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "material-icon-theme.activeIconPack": "qwik",
   "emmet.includeLanguages": {
     "typescriptreact": "html"
   },

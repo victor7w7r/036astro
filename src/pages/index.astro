@@ -1,25 +1,22 @@
 ---
-import Layout from '@/common/layouts/Layout.astro'
+import '@/home/ui/styles/home.css'
 
-import { CookieState } from '@/common/components/cookie-state/cookie-state'
-import { StorageState } from '@/common/components/storage-state/storage-state'
-import { Call } from '@/home/components/call'
-import Spinner from '@/home/components/Spinner.astro'
-
-import '@/home/styles/home.css'
+import { CookieState } from '@/common/ui/components/cookie-state/cookie-state'
+import { StorageState } from '@/common/ui/components/storage-state/storage-state'
+import Layout from '@/common/ui/layouts/Layout.astro'
+import { Call } from '@/home/ui/components/call'
+import Spinner from '@/home/ui/components/Spinner.astro'
 ---
 
 <Layout title='Home Page'>
   <div class='mt-10 flex h-min flex-col justify-center backdrop-blur-xl'>
     <div class='card-flex'>
-      <div id='card-container' class='card-container'>
+      <div class='card-container' id='card-container'>
         <p class='adaptable-amina'>Made with love by</p>
         <img-reactive
-          classstyle='scale-75 lg:scale-80'
-          white='brandwhite'
           black='brand'
-        >
-        </img-reactive>
+          classstyle='scale-75 lg:scale-80'
+          white='brandwhite'></img-reactive>
         <h3 class='adaptable-center-text-base mb-4 font-semibold'>
           Happy Hacking! with Typescript?
         </h3>
@@ -27,70 +24,69 @@ import '@/home/styles/home.css'
           Roboto Font works with
         </p>
         <img-reactive
+          black='tailwind'
           classstyle='scale-50 tall:scale-65 lg:scale-65'
           white='tailwindwhite'
-          black='tailwind'
         >
         </img-reactive>
-        <img alt='' id='imagetwo' class='' />
+        <img alt='' class='' id='imagetwo' />
       </div>
-      <div id='card-container' class='card-container'>
-        <CookieState />
-        <StorageState />
+      <div class='card-container' id='card-container'>
+        <CookieState client:load />
+        <StorageState client:load />
         <h3 class='adaptable-center-text-bold'>Lets see bitcoin price</h3>
-        <Call>saddsa<Spinner /></Call>
+        <Call client:load><Spinner /></Call>
       </div>
     </div>
     <div class='centered-button-ctn'>
       <a class='standard-button' href='/store' rel='prefetch'> Go to store</a>
     </div>
-    <div id='buttons-selector' class='mx-auto mt-3 flex w-fit flex-row gap-7'>
+    <div class='mx-auto mt-3 flex w-fit flex-row gap-7' id='buttons-selector'>
     </div>
   </div>
 </Layout>
 
-<script src='@/common/scripts'></script>
+<script src='@/common/ui/scripts'></script>
 
 <script>
   import { html } from 'sinuous'
   import { define } from 'uce'
+  import { inject } from '~/config'
 
-  import {
-    changeBlue,
-    changePurple,
-    changeRed,
-    changeEmerald,
-    theme
-  } from '@/common/stores'
+  const scriptFunction = () => {
+    const { changeBlue, changePurple, changeRed, changeEmerald, themeStore } =
+      inject.resolve('themeService')
 
-  type ImgReactiveProps = {
-    classstyle: string
-    white: string
-    black: string
-  }
+    const path = (isDark: boolean, white: string, black: string) =>
+      `/img/${isDark ? white : black}.png`
 
-  const path = (isDark: boolean, white: string, black: string) =>
-    `/img/${isDark ? white : black}.png`
-
-  define<ImgReactiveProps, { isDark: boolean }>('img-reactive', {
-    init() {
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      theme.subscribe(_ => this.render())
-    },
-    render() {
-      this.isDark = theme.get().isDark
-      this.html`<img
+    define<
+      {
+        classstyle: string
+        white: string
+        black: string
+      },
+      { isDark: boolean }
+    >('img-reactive', {
+      init() {
+        themeStore.subscribe(() => this.render())
+      },
+      render() {
+        this.isDark = themeStore.get().isDark
+        this.html`<img
         alt=''
         class='${this.props.classstyle}'
         src='${path(this.isDark, this.props.white, this.props.black)}'
       />`
-    }
-  })
+      }
+    })
 
-  document.querySelector('#buttons-selector')?.append(html`
-    <button class="blue-button" onclick=${changeBlue}></button>
-    <button class="purple-button" onclick=${changePurple}></button>
-    <button class="red-button" onclick=${changeRed}></button>
-    <button class="emerald-button" onclick=${changeEmerald}></button>
-  `)
+    document.querySelector('#buttons-selector')?.append(html`
+      <button class="blue-button" onclick=${changeBlue}></button>
+      <button class="purple-button" onclick=${changePurple}></button>
+      <button class="red-button" onclick=${changeRed}></button>
+      <button class="emerald-button" onclick=${changeEmerald}></button>
+    `)
+  }
+  scriptFunction()
 </script>

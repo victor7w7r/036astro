@@ -1,0 +1,38 @@
+---
+import Head from '@/common/ui/components/head/Head.astro'
+import Header from '@/common/ui/components/header/Header.astro'
+
+export type Props = { title: string }
+
+const { title } = Astro.props
+
+import '~/styles/global.css'
+---
+
+<!doctype html>
+<html lang='en'>
+  <head>
+    <Head title={title} />
+  </head>
+  <body>
+    <main class='flex h-screen flex-col'>
+      <Header />
+      <slot />
+    </main>
+    <script>
+      import { inject } from '~/config'
+      const scriptFunction = () => {
+        const { themeStore } = inject.resolve('themeService')
+
+        const className = 'app min-h-screen transition-colors duration-1000'
+        const main = document.querySelector('main')
+
+        main!.className = `${className} ${themeStore.get().white} ${themeStore.get().dark}`
+        themeStore.subscribe(
+          th => (main!.className = `${className} ${th.white} ${th.dark}`)
+        )
+      }
+      scriptFunction()
+    </script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+---
+export type Props = { title: string }
+
+const { title } = Astro.props
+---
+
+<meta charset='utf8' />
+<meta content='Astro description' name='description' />
+<meta content='width=device-width' name='viewport' />
+<link href='/favicon.svg' rel='icon' type='image/svg+xml' />
+<meta content={Astro.generator} name='generator' />
+<title>{title}</title>
+
+<script is:inline>
+  const theme = (() => {
+    if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+      return JSON.parse(localStorage.getItem('theme'))
+    }
+    return {
+      isDark: false,
+      white: 'bg-white',
+      dark: 'bg-gray-900'
+    }
+  })()
+
+  theme.isDark
+    ? document.documentElement.classList.add('dark')
+    : document.documentElement.classList.remove('dark')
+</script>

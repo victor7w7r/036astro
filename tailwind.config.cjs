@@ -1,17 +1,18 @@
 /** @type {import('tailwindcss').Config} */
+// eslint-disable-next-line toplevel/no-toplevel-side-effect, import/no-commonjs
 module.exports = {
-  darkMode: 'class',
   content: ['./src/**/*.{astro,html,md,mdx,svelte,ts,tsx}'],
+  darkMode: 'class',
+  plugins: [],
   theme: {
-    fontFamily: {
-      amina: ['amina-reska'],
-      roboto: ['Roboto']
-    },
     extend: {
       screens: {
         'tall': { 'raw': '(min-height: 768px)' }
       }
+    },
+    fontFamily: {
+      amina: ['amina-reska'],
+      roboto: ['Roboto']
     }
-  },
-  plugins: []
+  }
 }
