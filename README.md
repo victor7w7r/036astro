@@ -29,8 +29,8 @@ $ git checkout blank
 
 ```bash
 $ cd 036astro
-$ pnpm i       #Install packages
-$ pnpm dev     #Run develop
-$ pnpm build   #Make production build
-$ pnpm preview #Run production build
+$ bun install       #Install packages
+$ bun run dev     #Run develop
+$ bun run build   #Make production build
+$ bun run preview #Run production build
 ```
