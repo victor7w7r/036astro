@@ -1,6 +1,6 @@
-import { type Component, createResource, type JSX, Show } from 'solid-js'
+import { Show } from 'solid-js'
 
-import { inject } from '~/config'
+import { inject } from '~/di'
 
 export const Call: Component<Readonly<{ children?: JSX.Element }>> = props => {
   const getBitcoinUseCase = inject.resolve('getBitcoinUseCase')
@@ -9,16 +9,14 @@ export const Call: Component<Readonly<{ children?: JSX.Element }>> = props => {
 
   return (
     <Show fallback={props.children} when={bit.loading}>
-      <>
-        <p class='adaptable-call'>
-          Symbol:
-          {bit()?.symbol ?? 'loading'}
-        </p>
-        <p class='adaptable-call'>
-          Price:
-          {bit()?.askPrice ?? 'loading'}
-        </p>
-      </>
+      <p class='adaptable-call'>
+        Symbol:
+        {bit()?.symbol ?? 'loading'}
+      </p>
+      <p class='adaptable-call'>
+        Price:
+        {bit()?.askPrice ?? 'loading'}
+      </p>
     </Show>
   )
 }

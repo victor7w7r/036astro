@@ -46,47 +46,12 @@ import Spinner from '@/home/ui/components/Spinner.astro'
   </div>
 </Layout>
 
-<script src='@/common/ui/scripts'></script>
+<script>
+  import { scriptFunction } from '@/common/ui/scripts'
+  scriptFunction()
+</script>
 
 <script>
-  import { html } from 'sinuous'
-  import { define } from 'uce'
-  import { inject } from '~/config'
-
-  const scriptFunction = () => {
-    const { changeBlue, changePurple, changeRed, changeEmerald, themeStore } =
-      inject.resolve('themeService')
-
-    const path = (isDark: boolean, white: string, black: string) =>
-      `/img/${isDark ? white : black}.png`
-
-    define<
-      {
-        classstyle: string
-        white: string
-        black: string
-      },
-      { isDark: boolean }
-    >('img-reactive', {
-      init() {
-        themeStore.subscribe(() => this.render())
-      },
-      render() {
-        this.isDark = themeStore.get().isDark
-        this.html`<img
-        alt=''
-        class='${this.props.classstyle}'
-        src='${path(this.isDark, this.props.white, this.props.black)}'
-      />`
-      }
-    })
-
-    document.querySelector('#buttons-selector')?.append(html`
-      <button class="blue-button" onclick=${changeBlue}></button>
-      <button class="purple-button" onclick=${changePurple}></button>
-      <button class="red-button" onclick=${changeRed}></button>
-      <button class="emerald-button" onclick=${changeEmerald}></button>
-    `)
-  }
+  import { scriptFunction } from '@/home/ui/scripts'
   scriptFunction()
 </script>

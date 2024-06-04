@@ -1,5 +1,4 @@
 import Cookie from 'js-cookie'
-import { createSignal, onMount, Show } from 'solid-js'
 
 const design = 'adaptable-center-text text-base lg:text-xl font-semibold'
 

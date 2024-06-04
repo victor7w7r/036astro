@@ -1,6 +1,7 @@
-import { inject } from '~/config'
+import { inject } from '~/di'
 
-const scriptFunction = () => {
+// eslint-disable-next-line import/exports-last
+export const scriptFunction = () => {
   const className = 'card-container'
 
   const { themeStore } = inject.resolve('themeService')
@@ -10,5 +11,3 @@ const scriptFunction = () => {
     themeStore.subscribe(th => (el.className = `${className} ${th.control}`))
   }
 }
-
-scriptFunction()

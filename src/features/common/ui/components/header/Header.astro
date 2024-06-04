@@ -23,16 +23,6 @@ import { Toggler } from '@/common/ui/components/toggler/toggler'
 </div>
 
 <script>
-  import { inject } from '~/config'
-
-  const scriptFunction = () => {
-    const { themeStore } = inject.resolve('themeService')
-
-    const nav = document.querySelector('nav')
-
-    nav!.className = `navbar ${themeStore.get().control}`
-    themeStore.subscribe(th => (nav!.className = `navbar ${th.control}`))
-  }
-
+  import { scriptFunction } from '@/common/ui/components/header/header'
   scriptFunction()
 </script>

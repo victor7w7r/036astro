@@ -1,7 +1,7 @@
 import { useStore } from '@nanostores/solid'
 import { Show } from 'solid-js'
 
-import { inject } from '~/config'
+import { inject } from '~/di'
 
 export const StorageState = () => {
   const dataService = inject.resolve('dataService')

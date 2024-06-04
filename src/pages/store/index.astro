@@ -31,28 +31,12 @@ import Layout from '@/common/ui/layouts/Layout.astro'
   </div>
 </Layout>
 
-<script src='@/common/ui/scripts'></script>
 <script>
-  import Cookies from 'js-cookie'
-  import { html } from 'sinuous'
-  import { inject } from '~/config'
+  import { scriptFunction } from '@/common/ui/scripts'
+  scriptFunction()
+</script>
 
-  const scriptFunction = () => {
-    const { dataStore } = inject.resolve('dataService')
-
-    const send = () => {
-      const value =
-        document.querySelector<HTMLInputElement>('#inputable')?.value ?? ''
-      Cookies.set('data', value)
-      dataStore.set(value)
-    }
-
-    document
-      .querySelector('#send-button')
-      ?.append(html`
-        <button class="standard-button" onclick=${send}>Send</button>
-      `)
-  }
-
+<script>
+  import { scriptFunction } from '@/store/ui/scripts'
   scriptFunction()
 </script>

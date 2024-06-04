@@ -20,18 +20,7 @@ import '~/styles/global.css'
       <slot />
     </main>
     <script>
-      import { inject } from '~/config'
-      const scriptFunction = () => {
-        const { themeStore } = inject.resolve('themeService')
-
-        const className = 'app min-h-screen transition-colors duration-1000'
-        const main = document.querySelector('main')
-
-        main!.className = `${className} ${themeStore.get().white} ${themeStore.get().dark}`
-        themeStore.subscribe(
-          th => (main!.className = `${className} ${th.white} ${th.dark}`)
-        )
-      }
+      import { scriptFunction } from '@/common/ui/layouts/layout'
       scriptFunction()
     </script>
   </body>

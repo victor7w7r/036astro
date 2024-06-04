@@ -3,7 +3,7 @@ import './toggler.css'
 import { useStore } from '@nanostores/solid'
 import { createSignal, onMount } from 'solid-js'
 
-import { inject } from '~/config'
+import { inject } from '~/di'
 
 export const Toggler = () => {
   const { themeStore, toggle } = inject.resolve('themeService')
@@ -28,7 +28,10 @@ export const Toggler = () => {
           type='checkbox'
           value=''
         />
-        <div class={`${theme().togglePeer} toggle-design peer`} />
+        <div
+          class={`${theme().togglePeer} toggle-design peer`}
+          data-testid='toggleable'
+        />
         <span class='adaptable-text ml-3 select-none text-sm font-medium'>
           Dark Mode
         </span>
