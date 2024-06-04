@@ -27,11 +27,11 @@ $ git checkout blank
 - tailwindcss: Utility-first CSS framework for rapidly building custom user interfaces
 - unplugin-auto-import: Automatically import components, hooks, and utilities
 
-### Run and Develop (Consider using pnpm)
+### Run and Develop (Consider using bun)
 
 ```bash
 $ cd 036astro
-$ bun install       #Install packages
+$ bun install     #Install packages
 $ bun run dev     #Run develop
 $ bun run build   #Make production build
 $ bun run preview #Run production build

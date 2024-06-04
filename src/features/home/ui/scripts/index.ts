@@ -3,7 +3,7 @@ import { define } from 'uce'
 
 import { inject } from '~/di'
 
-const path = (isDark: boolean, white: string, black: string) =>
+export const path = (isDark: boolean, white: string, black: string) =>
   `/img/${isDark ? white : black}.png`
 
 // eslint-disable-next-line import/exports-last
