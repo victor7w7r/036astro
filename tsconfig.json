@@ -6,6 +6,8 @@
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "jsx": "preserve",
+    "jsxImportSource": "solid-js",
     "module": "ESNext",
     "moduleResolution": "node",
     "noEmit": true,
@@ -15,7 +17,9 @@
     },
     "resolveJsonModule": true,
     "skipLibCheck": true,
-    "target": "ES2020"
+    "target": "ES2020",
+    "types": ["vitest/globals"]
   },
-  "extends": "./tsconfig.app.json"
+  "extends": "./tsconfig.app.json",
+  "include": ["src", "test", "auto-import.ts"]
 }

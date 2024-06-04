@@ -20,12 +20,14 @@ $ git checkout blank
 
 - axios: Promise based HTTP client for the browser and node.js
 - awilix: Extremely powerful Dependency Injection (DI) container for JavaScript/TypeScript projects
+- fp-ts: Functional programming in TypeScript
 - nanostores: A tiny (less than 1kb) state manager using observables and persistent stores
 - uce: µhtml based Custom Elements
 - solidjs: A declarative, efficient, and flexible JavaScript library for building user interfaces
 - tailwindcss: Utility-first CSS framework for rapidly building custom user interfaces
+- unplugin-auto-import: Automatically import components, hooks, and utilities
 
-### Run and Develop (Consider using pnpm)
+### Run and Develop (Consider using bun)
 
 ```bash
 $ cd 036astro
