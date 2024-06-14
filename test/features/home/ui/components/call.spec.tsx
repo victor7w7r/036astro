@@ -1,42 +1,71 @@
 import { render, screen } from '@solidjs/testing-library'
 
-import { errorBinance } from '@/home/business/models'
 import { Call } from '@/home/ui/components/call'
 
 const mocks = vi.hoisted(() => ({
-  coinsMock: vi.fn().mockReturnValue(new Promise(() => {})),
-  getBitcoinUseCaseMock: { exec: vi.fn() }
+  exec: vi.fn()
 }))
 
 vi.mock('~/di', () => ({
   inject: {
-    resolve: vi
-      .fn()
-      .mockReturnValue({ getBitcoinUseCase: mocks.getBitcoinUseCaseMock })
+    resolve: vi.fn(() => ({
+      exec: mocks.exec
+    }))
   }
 }))
 
-vi.mock('solid-js', async () => {
-  const actual = await vi.importActual('solid-js')
-
-  return {
-    ...actual,
-    createResource: vi.fn().mockReturnValue([mocks.coinsMock])
-  }
-})
-
 describe('call', () => {
-  it('should display fallback content if provided', () => {
-    expect.assertions(1)
+  const errBinance = {
+    askPrice: '',
+    askQty: '',
+    bidPrice: '',
+    bidQty: '',
+    closeTime: 0,
+    count: 0,
+    firstId: 0,
+    highPrice: '',
+    lastId: 0,
+    lastPrice: '',
+    lastQty: '',
+    lowPrice: '',
+    openPrice: '',
+    openTime: 0,
+    prevClosePrice: '',
+    priceChange: '',
+    priceChangePercent: '',
+    quoteVolume: '',
+    symbol: 'ERR',
+    volume: '',
+    weightedAvgPrice: ''
+  }
 
-    mocks.coinsMock.mockReturnValue(new Promise(errorBinance))
+  it('should display loading', () => {
+    expect.assertions(2)
+
+    mocks.exec.mockResolvedValue({})
 
     render(() => (
       <Call>
-        <p>Fallback content</p>
+        <p>callback</p>
       </Call>
     ))
 
-    expect(screen.getByText(/fallback content/i)).toBeInTheDocument()
+    for (const el of screen.getAllByText(/loading/)) {
+      expect(el).toBeInTheDocument()
+    }
+  })
+
+  it('should display callback', async () => {
+    expect.assertions(1)
+
+    mocks.exec.mockResolvedValue(errBinance)
+
+    render(() => (
+      <Call>
+        <p>callback</p>
+      </Call>
+    ))
+
+    await expect(screen.findByText(/callback/)).resolves.toBeInTheDocument()
   })
 })

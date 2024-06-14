@@ -1,8 +1,6 @@
 import { scriptFunction } from '@/store/ui/scripts'
 
 const mocks = vi.hoisted(() => ({
-  mockHtml: vi.fn(),
-  mockInject: vi.fn(),
   mockSetCookies: vi.fn(),
   mockSetData: { set: vi.fn() }
 }))
@@ -23,14 +21,16 @@ vi.mock('js-cookie', () => ({
 
 describe('store', () => {
   beforeEach(() => {
-    document.body.innerHTML = `
-      <input id="inputable" value="test value"/>
-      <div id="send-button"></div>
-    `
+    document.body.innerHTML = ''
   })
 
   it('should set cookie and update dataStore on send', () => {
     expect.assertions(2)
+
+    document.body.innerHTML = `
+      <input id="inputable" value="test value"/>
+      <div id="send-button"></div>
+    `
 
     scriptFunction()
 
@@ -44,8 +44,26 @@ describe('store', () => {
     expect(mocks.mockSetData.set).toHaveBeenCalledWith('test value')
   })
 
+  it('should send cookies when element does not exist', () => {
+    expect.assertions(2)
+
+    document.body.innerHTML = ''
+
+    document.querySelector('#inputable')?.remove()
+
+    scriptFunction()
+
+    expect(mocks.mockSetCookies).toHaveBeenCalledWith('data', 'test value')
+    expect(mocks.mockSetData.set).toHaveBeenCalledWith('test value')
+  })
+
   it('should create the send button inside #send-button', () => {
     expect.assertions(3)
+
+    document.body.innerHTML = `
+    <input id="inputable" value="test value"/>
+    <div id="send-button"></div>
+  `
 
     scriptFunction()
 

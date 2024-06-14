@@ -40,7 +40,6 @@ describe('themeService', () => {
   it('should set dark mode correctly', () => {
     expect.assertions(1)
 
-    const { setDark } = themeService()
     mocks.mockThemeStore.get.mockReturnValue({
       control: 'bg-slate-700/30',
       dark: 'dark:bg-zinc-900',
@@ -48,6 +47,8 @@ describe('themeService', () => {
       togglePeer: '',
       white: 'bg-white'
     })
+
+    const { setDark } = themeService()
 
     setDark(true)
 
@@ -60,10 +61,9 @@ describe('themeService', () => {
     })
   })
 
-  it('should toggle dark mode', () => {
+  it('should toggle dark mode and set false', () => {
     expect.assertions(2)
 
-    const { toggle } = themeService()
     mocks.mockThemeStore.get.mockReturnValue({
       control: 'bg-slate-700/30',
       dark: 'dark:bg-zinc-900',
@@ -71,6 +71,8 @@ describe('themeService', () => {
       togglePeer: '',
       white: 'bg-white'
     })
+
+    const { toggle } = themeService()
 
     toggle()
 
@@ -84,10 +86,34 @@ describe('themeService', () => {
     expect(document.documentElement.classList.contains('dark')).toBeTruthy()
   })
 
+  it('should toggle dark mode and set true', () => {
+    expect.assertions(2)
+
+    mocks.mockThemeStore.get.mockReturnValue({
+      control: 'bg-slate-700/30',
+      dark: 'dark:bg-zinc-900',
+      isDark: true,
+      togglePeer: '',
+      white: 'bg-white'
+    })
+
+    const { toggle } = themeService()
+
+    toggle()
+
+    expect(mocks.mockThemeStore.set).toHaveBeenCalledWith({
+      control: 'bg-slate-700/30',
+      dark: 'dark:bg-zinc-900',
+      isDark: false,
+      togglePeer: 'peer-checked:bg-white',
+      white: 'bg-white'
+    })
+    expect(document.documentElement.classList.contains('dark')).toBeFalsy()
+  })
+
   it('should change theme selector to blue', () => {
     expect.assertions(1)
 
-    const { changeBlue } = themeService()
     mocks.mockThemeStore.get.mockReturnValue({
       control: 'bg-slate-700/30',
       dark: 'dark:bg-zinc-900',
@@ -95,6 +121,8 @@ describe('themeService', () => {
       togglePeer: '',
       white: 'bg-white'
     })
+
+    const { changeBlue } = themeService()
 
     changeBlue()
 
@@ -110,7 +138,6 @@ describe('themeService', () => {
   it('should change theme selector to purple', () => {
     expect.assertions(1)
 
-    const { changePurple } = themeService()
     mocks.mockThemeStore.get.mockReturnValue({
       control: 'bg-slate-700/30',
       dark: 'dark:bg-zinc-900',
@@ -118,6 +145,8 @@ describe('themeService', () => {
       togglePeer: '',
       white: 'bg-white'
     })
+
+    const { changePurple } = themeService()
 
     changePurple()
 
@@ -133,7 +162,6 @@ describe('themeService', () => {
   it('should change theme selector to red', () => {
     expect.assertions(1)
 
-    const { changeRed } = themeService()
     mocks.mockThemeStore.get.mockReturnValue({
       control: 'bg-slate-700/30',
       dark: 'dark:bg-zinc-900',
@@ -141,6 +169,8 @@ describe('themeService', () => {
       togglePeer: '',
       white: 'bg-white'
     })
+
+    const { changeRed } = themeService()
 
     changeRed()
 
@@ -156,23 +186,24 @@ describe('themeService', () => {
   it('should change theme selector to emerald', () => {
     expect.assertions(1)
 
-    const { changeEmerald } = themeService()
     mocks.mockThemeStore.get.mockReturnValue({
       control: 'bg-slate-700/30',
       dark: 'dark:bg-zinc-900',
-      isDark: false,
+      isDark: true,
       togglePeer: '',
       white: 'bg-white'
     })
+
+    const { changeEmerald } = themeService()
 
     changeEmerald()
 
     expect(mocks.mockThemeStore.set).toHaveBeenCalledWith({
       control: 'bg-emerald-700/30',
-      dark: 'dark:bg-zinc-900',
-      isDark: false,
-      togglePeer: 'peer-checked:bg-emerald-300',
-      white: 'bg-emerald-300'
+      dark: 'dark:bg-emerald-900',
+      isDark: true,
+      togglePeer: 'peer-checked:bg-emerald-500',
+      white: 'bg-white'
     })
   })
 })

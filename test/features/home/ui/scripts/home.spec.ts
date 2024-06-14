@@ -29,7 +29,9 @@ vi.mock('~/di', () => ({
 
 describe('home', () => {
   beforeEach(() => {
-    document.body.innerHTML = '<div id="buttons-selector"></div>'
+    document.body.innerHTML = `
+      <div id="buttons-selector"></div>
+    `
   })
 
   it('should return the white image path when isDark is true', () => {
@@ -71,6 +73,24 @@ describe('home', () => {
         render: expect.any(Function)
       })
     )
+  })
+
+  it('should render custom component', () => {
+    expect.assertions(1)
+
+    const [[, component]] = (define as Mock).mock.calls
+
+    // eslint-disable-next-line vitest/prefer-spy-on
+    component.html = vi.fn()
+
+    component.props = {
+      classstyle: 'scale-75 lg:scale-80',
+      white: 'brandwhite'
+    }
+
+    component.render()
+
+    expect(component.isDark).toBe(false)
   })
 
   it('should add buttons to the DOM', () => {

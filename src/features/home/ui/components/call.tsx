@@ -9,14 +9,8 @@ export const Call: Component<Readonly<{ children?: JSX.Element }>> = props => {
 
   return (
     <Show fallback={props.children} when={bit.loading}>
-      <p class='adaptable-call'>
-        Symbol:
-        {bit()?.symbol ?? 'loading'}
-      </p>
-      <p class='adaptable-call'>
-        Price:
-        {bit()?.askPrice ?? 'loading'}
-      </p>
+      <p class='adaptable-call'>Symbol: {bit()?.symbol ?? 'loading'}</p>
+      <p class='adaptable-call'>Price: {bit()?.askPrice ?? 'loading'}</p>
     </Show>
   )
 }
