@@ -1,19 +1,19 @@
 import { scriptFunction } from '@/common/ui/components/header/header'
 
-const mocks = vi.hoisted(() => ({
-  mockThemeStore: {
-    get: vi.fn().mockReturnValue({ control: 'initial-control' }),
-    subscribe: vi.fn()
-  }
-}))
-
-vi.mock('~/di', () => ({
-  inject: {
-    resolve: vi.fn().mockReturnValue({ themeStore: mocks.mockThemeStore })
-  }
-}))
-
 describe('header', () => {
+  const mocks = vi.hoisted(() => ({
+    mockThemeStore: {
+      get: vi.fn(() => ({ control: 'initial-control' })),
+      subscribe: vi.fn()
+    }
+  }))
+
+  vi.mock('~/di', () => ({
+    inject: {
+      resolve: vi.fn(() => ({ themeStore: mocks.mockThemeStore }))
+    }
+  }))
+
   beforeEach(() => {
     document.body.innerHTML = `
     <nav class="navbar" id="navbar"></nav>
@@ -27,6 +27,7 @@ describe('header', () => {
 
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     const nav = document.querySelector('nav')!
+
     expect(nav.className).toBe('navbar initial-control')
   })
 
@@ -41,6 +42,7 @@ describe('header', () => {
 
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     const nav = document.querySelector('nav')!
+
     expect(nav.className).toBe('navbar updated-control')
   })
 })

@@ -1,20 +1,20 @@
 import { scriptFunction } from '@/common/ui/scripts'
 
-const mocks = vi.hoisted(() => ({
-  mochThemeStore: {
-    get: vi.fn(),
-    set: vi.fn(),
-    subscribe: vi.fn()
-  }
-}))
-
-vi.mock('~/di', () => ({
-  inject: {
-    resolve: vi.fn().mockReturnValue({ themeStore: mocks.mochThemeStore })
-  }
-}))
-
 describe('commonScript', () => {
+  const mocks = vi.hoisted(() => ({
+    mochThemeStore: {
+      get: vi.fn(),
+      set: vi.fn(),
+      subscribe: vi.fn()
+    }
+  }))
+
+  vi.mock('~/di', () => ({
+    inject: {
+      resolve: vi.fn(() => ({ themeStore: mocks.mochThemeStore }))
+    }
+  }))
+
   beforeEach(() => {
     document.body.innerHTML = `
       <div id="card-container"></div>

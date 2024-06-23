@@ -2,19 +2,19 @@ import { persistentAtom } from '@nanostores/persistent'
 
 import { dataService } from '@/common/ui/services'
 
-const mocks = vi.hoisted(() => ({
-  mockDataStore: {
-    get: vi.fn(),
-    set: vi.fn(),
-    subscribe: vi.fn()
-  }
-}))
-
-vi.mock('@nanostores/persistent', () => ({
-  persistentAtom: vi.fn().mockReturnValue(mocks.mockDataStore)
-}))
-
 describe('dataService', () => {
+  const mocks = vi.hoisted(() => ({
+    mockDataStore: {
+      get: vi.fn(),
+      set: vi.fn(),
+      subscribe: vi.fn()
+    }
+  }))
+
+  vi.mock('@nanostores/persistent', () => ({
+    persistentAtom: vi.fn(() => mocks.mockDataStore)
+  }))
+
   it('should initialize dataStore with persistentAtom', () => {
     expect.assertions(2)
 

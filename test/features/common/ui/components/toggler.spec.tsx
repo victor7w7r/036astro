@@ -2,33 +2,34 @@ import { fireEvent, render, screen } from '@solidjs/testing-library'
 
 import { Toggler } from '@/common/ui/components/toggler/toggler'
 
-const mocks = vi.hoisted(() => ({
-  mockToggle: vi.fn()
-}))
-
-vi.mock('~/di', () => ({
-  inject: {
-    resolve: vi.fn().mockReturnValue({
-      themeStore: vi.fn(),
-      toggle: mocks.mockToggle
-    })
-  }
-}))
-
-vi.mock('@nanostores/solid', () => ({
-  useStore: vi.fn().mockReturnValue(() => ({
-    isDark: false,
-    togglePeer: 'bg-white'
-  }))
-}))
-
 describe('toggler', () => {
+  const mocks = vi.hoisted(() => ({
+    mockToggle: vi.fn()
+  }))
+
+  vi.mock('~/di', () => ({
+    inject: {
+      resolve: vi.fn(() => ({
+        themeStore: vi.fn(),
+        toggle: mocks.mockToggle
+      }))
+    }
+  }))
+
+  vi.mock('@nanostores/solid', () => ({
+    useStore: vi.fn(() => ({
+      isDark: false,
+      togglePeer: 'bg-white'
+    }))
+  }))
+
   it('should render with initial state', () => {
     expect.assertions(2)
 
     render(() => <Toggler />)
 
     const checkbox = screen.getByRole('checkbox')
+
     expect(checkbox).not.toBeChecked()
     expect(screen.getByText('Dark Mode')).toBeInTheDocument()
   })
@@ -50,6 +51,7 @@ describe('toggler', () => {
     render(() => <Toggler />)
 
     const checkbox = screen.getByRole('checkbox')
+
     expect(checkbox).not.toBeChecked()
   })
 
@@ -59,6 +61,7 @@ describe('toggler', () => {
     render(() => <Toggler />)
 
     const toggleDiv = screen.getByTestId('toggleable')
+
     expect(toggleDiv).toHaveClass('bg-white')
   })
 })

@@ -4,30 +4,30 @@ import { Mock } from 'vitest'
 
 import { path, scriptFunction } from '@/home/ui/scripts'
 
-const mocks = vi.hoisted(() => ({
-  changeBlue: vi.fn(),
-  changeEmerald: vi.fn(),
-  changePurple: vi.fn(),
-  changeRed: vi.fn(),
-  themeStore: {
-    get: vi.fn().mockReturnValue({ isDark: false }),
-    subscribe: vi.fn()
-  }
-}))
-
-vi.mock('~/di', () => ({
-  inject: {
-    resolve: vi.fn().mockReturnValue({
-      changeBlue: mocks.changeBlue,
-      changeEmerald: mocks.changeEmerald,
-      changePurple: mocks.changePurple,
-      changeRed: mocks.changeRed,
-      themeStore: mocks.themeStore
-    })
-  }
-}))
-
 describe('home', () => {
+  const mocks = vi.hoisted(() => ({
+    changeBlue: vi.fn(),
+    changeEmerald: vi.fn(),
+    changePurple: vi.fn(),
+    changeRed: vi.fn(),
+    themeStore: {
+      get: vi.fn(() => ({ isDark: false })),
+      subscribe: vi.fn()
+    }
+  }))
+
+  vi.mock('~/di', () => ({
+    inject: {
+      resolve: vi.fn(() => ({
+        changeBlue: mocks.changeBlue,
+        changeEmerald: mocks.changeEmerald,
+        changePurple: mocks.changePurple,
+        changeRed: mocks.changeRed,
+        themeStore: mocks.themeStore
+      }))
+    }
+  }))
+
   beforeEach(() => {
     document.body.innerHTML = `
       <div id="buttons-selector"></div>
@@ -38,6 +38,7 @@ describe('home', () => {
     expect.assertions(1)
 
     const result = path(true, 'white-icon', 'black-icon')
+
     expect(result).toBe('/img/white-icon.png')
   })
 
@@ -45,6 +46,7 @@ describe('home', () => {
     expect.assertions(1)
 
     const result = path(false, 'white-icon', 'black-icon')
+
     expect(result).toBe('/img/black-icon.png')
   })
 
@@ -53,6 +55,7 @@ describe('home', () => {
 
     const resultDark = path(true, 'white-image', 'black-image')
     const resultLight = path(false, 'white-image', 'black-image')
+
     expect(resultDark).toBe('/img/white-image.png')
     expect(resultLight).toBe('/img/black-image.png')
   })
@@ -99,6 +102,7 @@ describe('home', () => {
     scriptFunction()
 
     const buttonsSelector = document.querySelector('#buttons-selector')
+
     expect(buttonsSelector).toBeTruthy()
     expect(buttonsSelector?.innerHTML).toContain(
       '<button class="blue-button"></button>'

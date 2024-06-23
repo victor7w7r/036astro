@@ -5,6 +5,7 @@ describe('axiosModule', () => {
     expect.assertions(1)
 
     const module = axiosModule()
+
     expect(typeof module).toBe('object')
   })
 
@@ -12,6 +13,7 @@ describe('axiosModule', () => {
     expect.assertions(1)
 
     const module = axiosModule()
+
     expect('client' in module).toBeTruthy()
   })
 
@@ -19,6 +21,7 @@ describe('axiosModule', () => {
     expect.assertions(1)
 
     const module = axiosModule()
+
     expect(module.client.defaults.baseURL).toBe('https://api2.binance.com/api')
   })
 })

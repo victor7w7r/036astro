@@ -1,25 +1,25 @@
 import { scriptFunction } from '@/store/ui/scripts'
 
-const mocks = vi.hoisted(() => ({
-  mockSetCookies: vi.fn(),
-  mockSetData: { set: vi.fn() }
-}))
-
-vi.mock('~/di', () => ({
-  inject: {
-    resolve: vi.fn().mockReturnValue({
-      dataStore: mocks.mockSetData
-    })
-  }
-}))
-
-vi.mock('js-cookie', () => ({
-  default: {
-    set: mocks.mockSetCookies
-  }
-}))
-
 describe('store', () => {
+  const mocks = vi.hoisted(() => ({
+    mockSetCookies: vi.fn(),
+    mockSetData: { set: vi.fn() }
+  }))
+
+  vi.mock('~/di', () => ({
+    inject: {
+      resolve: vi.fn(() => ({
+        dataStore: mocks.mockSetData
+      }))
+    }
+  }))
+
+  vi.mock('js-cookie', () => ({
+    default: {
+      set: mocks.mockSetCookies
+    }
+  }))
+
   beforeEach(() => {
     document.body.innerHTML = ''
   })
@@ -71,6 +71,7 @@ describe('store', () => {
     const button = document.querySelector(
       '#send-button button'
     ) as HTMLButtonElement
+
     expect(button).not.toBeNull()
     expect(button.className).toBe('standard-button')
     expect(button.textContent).toBe('Send')

@@ -2,17 +2,17 @@ import { render, screen } from '@solidjs/testing-library'
 
 import { CookieState } from '@/common/ui/components/cookie-state/cookie-state'
 
-const mocks = vi.hoisted(() => ({
-  mockGetCookies: vi.fn()
-}))
-
-vi.mock('js-cookie', () => ({
-  default: {
-    get: mocks.mockGetCookies
-  }
-}))
-
 describe('cookieState', () => {
+  const mocks = vi.hoisted(() => ({
+    mockGetCookies: vi.fn()
+  }))
+
+  vi.mock('js-cookie', () => ({
+    default: {
+      get: mocks.mockGetCookies
+    }
+  }))
+
   it('should display "Not yet" when cookie is undefined', () => {
     expect.assertions(1)
 

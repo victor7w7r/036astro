@@ -25,7 +25,6 @@ describe('binanceDataSource', () => {
     expect(axiosInstance.get).toHaveBeenCalledWith('/v3/ticker/24hr', {
       timeout
     })
-
     expect(response.data).toStrictEqual(responseData)
   })
 })

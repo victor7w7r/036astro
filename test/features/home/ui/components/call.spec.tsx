@@ -2,19 +2,19 @@ import { render, screen } from '@solidjs/testing-library'
 
 import { Call } from '@/home/ui/components/call'
 
-const mocks = vi.hoisted(() => ({
-  exec: vi.fn()
-}))
-
-vi.mock('~/di', () => ({
-  inject: {
-    resolve: vi.fn(() => ({
-      exec: mocks.exec
-    }))
-  }
-}))
-
 describe('call', () => {
+  const mocks = vi.hoisted(() => ({
+    exec: vi.fn()
+  }))
+
+  vi.mock('~/di', () => ({
+    inject: {
+      resolve: vi.fn(() => ({
+        exec: mocks.exec
+      }))
+    }
+  }))
+
   const errBinance = {
     askPrice: '',
     askQty: '',

@@ -3,26 +3,26 @@ import { describe, expect, it, vi } from 'vitest'
 
 import { StorageState } from '@/common/ui/components/storage-state/storage-state'
 
-const mocks = vi.hoisted(() => ({
-  mockData: vi.fn(),
-  mockDataStore: {
-    get: vi.fn(),
-    set: vi.fn(),
-    subscribe: vi.fn()
-  }
-}))
-
-vi.mock('@nanostores/solid', () => ({
-  useStore: () => mocks.mockData
-}))
-
-vi.mock('~/di', () => ({
-  inject: {
-    resolve: vi.fn().mockReturnValue({ dataStore: mocks.mockDataStore })
-  }
-}))
-
 describe('storageState', () => {
+  const mocks = vi.hoisted(() => ({
+    mockData: vi.fn(),
+    mockDataStore: {
+      get: vi.fn(),
+      set: vi.fn(),
+      subscribe: vi.fn()
+    }
+  }))
+
+  vi.mock('@nanostores/solid', () => ({
+    useStore: () => mocks.mockData
+  }))
+
+  vi.mock('~/di', () => ({
+    inject: {
+      resolve: vi.fn(() => ({ dataStore: mocks.mockDataStore }))
+    }
+  }))
+
   it('should display "Not yet" when data is undefined', () => {
     expect.assertions(1)
 

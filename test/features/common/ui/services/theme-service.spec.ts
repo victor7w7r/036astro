@@ -2,19 +2,19 @@ import { persistentAtom } from '@nanostores/persistent'
 
 import { themeService } from '@/common/ui/services'
 
-const mocks = vi.hoisted(() => ({
-  mockThemeStore: {
-    get: vi.fn(),
-    set: vi.fn(),
-    subscribe: vi.fn()
-  }
-}))
-
-vi.mock('@nanostores/persistent', () => ({
-  persistentAtom: vi.fn().mockReturnValue(mocks.mockThemeStore)
-}))
-
 describe('themeService', () => {
+  const mocks = vi.hoisted(() => ({
+    mockThemeStore: {
+      get: vi.fn(),
+      set: vi.fn(),
+      subscribe: vi.fn()
+    }
+  }))
+
+  vi.mock('@nanostores/persistent', () => ({
+    persistentAtom: vi.fn(() => mocks.mockThemeStore)
+  }))
+
   it('should initialize themeStore with persistentAtom', () => {
     expect.assertions(2)
 

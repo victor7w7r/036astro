@@ -1,20 +1,20 @@
 import { scriptFunction } from '@/common/ui/layouts/layout'
 
-const mocks = vi.hoisted(() => ({
-  mockThemeStore: {
-    get: vi.fn().mockReturnValue({ dark: 'dark:bg-black', white: 'bg-white' }),
-    set: vi.fn(),
-    subscribe: vi.fn()
-  }
-}))
-
-vi.mock('~/di', () => ({
-  inject: {
-    resolve: vi.fn().mockReturnValue({ themeStore: mocks.mockThemeStore })
-  }
-}))
-
 describe('layout', () => {
+  const mocks = vi.hoisted(() => ({
+    mockThemeStore: {
+      get: vi.fn(() => ({ dark: 'dark:bg-black', white: 'bg-white' })),
+      set: vi.fn(),
+      subscribe: vi.fn()
+    }
+  }))
+
+  vi.mock('~/di', () => ({
+    inject: {
+      resolve: vi.fn(() => ({ themeStore: mocks.mockThemeStore }))
+    }
+  }))
+
   beforeEach(() => {
     document.body.innerHTML = '<main></main>'
   })
