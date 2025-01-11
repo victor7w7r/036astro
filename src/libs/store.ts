@@ -5,9 +5,6 @@ import { Container, Inject, Service } from 'typedi'
 @Service()
 export class Store {
   name = 'test'
-  constructor() {
-    console.log('Store created')
-  }
 }
 
 @Service({ transient: true })

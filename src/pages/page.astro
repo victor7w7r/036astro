@@ -7,7 +7,7 @@ import Layout from '../layouts/Layout.astro'
 <!-- <script src='../components/Element.svelte'></script> - -->
 <Layout>
   <main>
-    <a href='/'>page1</a>
+    <a data-turbo='true' href='/'>page1</a>
     <div data-turbo-permanent id='element'>
       <h3>Lit</h3>
       <lit-element></lit-element>
@@ -24,6 +24,6 @@ import Layout from '../layouts/Layout.astro'
       <h3>Svelte Element</h3>
       <svelte-element></svelte-element>
     </div>  -->
-    <Common client:visible />
+    <Common client:load />
   </main>
 </Layout>
