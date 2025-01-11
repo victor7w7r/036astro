@@ -1,15 +1,10 @@
 {
   "compilerOptions": {
-    "allowJs": false,
     "baseUrl": ".",
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
+    "experimentalDecorators": true,
     "isolatedModules": true,
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
-    "jsx": "preserve",
-    "jsxImportSource": "solid-js",
     "module": "ESNext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "noEmit": true,
     "paths": {
       "@/*": ["src/features/*"],
@@ -17,9 +12,10 @@
     },
     "resolveJsonModule": true,
     "skipLibCheck": true,
-    "target": "ES2020",
-    "types": ["vitest/globals"]
+    "target": "ESNext",
+    "useDefineForClassFields": false
   },
   "extends": "./tsconfig.app.json",
-  "include": ["src", "test", "auto-import.ts"]
+  "include": [".astro/types.d.ts", "src", "test"],
+  "exclude": ["dist"]
 }

@@ -1,22 +1,13 @@
----
-export type Props = { title: string }
-
-const { title } = Astro.props
----
-
 <!doctype html>
 <html lang='en'>
   <head>
     <meta charset='utf8' />
-    <meta content='Astro description' name='description' />
     <meta content='width=device-width' name='viewport' />
     <link href='/favicon.svg' rel='icon' type='image/svg+xml' />
     <meta content={Astro.generator} name='generator' />
-    <title>{title}</title>
+    <script src='../libs/init'></script>
   </head>
   <body>
-    <main>
-      <slot />
-    </main>
+    <slot />
   </body>
 </html>

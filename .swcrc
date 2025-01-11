@@ -1,0 +1,21 @@
+{
+  "$schema": "https://swc.rs/schema.json",
+  "minify": true,
+  "jsc": {
+    "parser": {
+      "syntax": "typescript",
+      "decorators": true
+    },
+    "target": "esnext",
+    "transform": {
+      "decoratorMetadata": true,
+      "useDefineForClassFields": false
+    },
+    "minify": {
+      "compress": {
+        "unused": true
+      },
+      "mangle": true
+    }
+  }
+}

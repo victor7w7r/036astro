@@ -2,15 +2,22 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "group": "build",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "type": "shell",
+      "command": "bun",
+      "args": ["tsc", "-p", "tsconfig.json", "--watch"],
       "label": "tsc: inspección: tsconfig.json",
-      "option": "watch",
       "problemMatcher": ["$tsc-watch"],
       "runOptions": {
         "runOn": "folderOpen"
       },
-      "type": "typescript",
-      "tsconfig": "tsconfig.json"
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      }
     }
   ]
 }

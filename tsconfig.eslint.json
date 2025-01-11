@@ -2,7 +2,7 @@
   "compilerOptions": {
     "allowJs": true
   },
-  "exclude": ["node_modules", "public", "astro"],
+  "exclude": ["node_modules", "public", ".astro"],
   "extends": "./tsconfig.json",
   "include": [".eslintrc.cjs", "src", "test", "**/*.cjs", "**/*.js", "**/*.mjs"]
 }
