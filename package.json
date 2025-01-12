@@ -12,15 +12,11 @@
   },
   "dependencies": {
     "@abraham/reflection": "^0.12.0",
-    "@astrojs/node": "^9.0.0",
-    "@astrojs/svelte": "^7.0.3",
-    "@hedystia/astro-bun": "^0.2.2",
     "@hotwired/stimulus": "^3.2.2",
     "@hotwired/turbo": "^8.0.12",
     "@nanostores/lit": "^0.2.2",
     "@tanstack/svelte-query": "^5.62.16",
     "apisauce": "3.1.0",
-    "astro": "^5.1.5",
     "fp-ts": "2.16.9",
     "lit": "^3.2.1",
     "nanostores": "^0.11.3",
@@ -29,12 +25,14 @@
   },
   "devDependencies": {
     "@astro-tools/client-directives": "^0.1.1",
+    "@astrojs/svelte": "^7.0.3",
+    "@hedystia/astro-bun": "^0.2.2",
     "@sveltejs/kit": "^2.15.2",
     "@swc/core": "^1.10.7",
     "@types/eslint": "^8.56.12",
     "@typescript-eslint/eslint-plugin": "^8.19.1",
     "@typescript-eslint/parser": "^8.19.1",
-    "astro-compress": "^2.3.6",
+    "astro": "^5.1.5",
     "eslint": "^8.57.1",
     "eslint-config-prettier": "^9.1.0",
     "eslint-import-resolver-typescript": "^3.7.0",
@@ -61,7 +59,6 @@
     "prettier-plugin-sh": "^0.14.0",
     "prettier-plugin-svelte": "^3.3.2",
     "typescript": "^5.7.3",
-    "unplugin-swc": "^1.5.1",
-    "vite-tsconfig-paths": "^5.1.4"
+    "unplugin-swc": "^1.5.1"
   }
 }
