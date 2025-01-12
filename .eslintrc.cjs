@@ -396,6 +396,7 @@ module.exports = {
     'unicorn/no-unused-properties': 'warn',
     'unicorn/numeric-separators-style': 'off',
     'unicorn/prevent-abbreviations': 'off',
+    'wc/guard-super-call': 'off',
     'yoda': ['error', 'never', { 'exceptRange': false }]
   }
 }

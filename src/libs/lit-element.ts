@@ -5,7 +5,7 @@ import { customElement, state } from 'lit/decorators.js'
 export class MyElement extends LitElement {
   @state() private count = 0
 
-  override render = () => html`
+  override readonly render = () => html`
     <button @click=${this._onClick} part="button">
       count is ${this.count}
     </button>
