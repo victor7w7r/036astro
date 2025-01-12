@@ -4,5 +4,11 @@
   },
   "exclude": ["node_modules", "public", ".astro"],
   "extends": "./tsconfig.json",
-  "include": [".eslintrc.cjs", "src", "test", "**/*.cjs", "**/*.js", "**/*.mjs"]
+  "include": [
+    ".eslintrc.cjs",
+    "src",
+    "test",
+    "astro.config.mts",
+    "svelte.config.ts"
+  ]
 }

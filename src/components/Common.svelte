@@ -1,16 +1,8 @@
-<script lang="ts">
-  import { testeable } from 'src/libs/store'
-
-  let name = $state(testeable.store.name)
-
-  let input: HTMLInputElement
-
-  const updateState = () => {
-    name = input.value
-    testeable.store.name = name
-  }
+<script>
+  import { createHook } from '../libs/hook.svelte'
+  const hook = createHook()
 </script>
 
-<p>El estado es: {name}</p>
-<input type="text" src="" alt="" placeholder="Escribe algo" bind:this={input} />
-<button onclick={updateState}>Actualizar</button>
+<p>El estado es: {hook.getName}</p>
+<input type="text" placeholder="Escribe algo" bind:this={hook.inputRef} />
+<button onclick={hook.updateState}>Actualizar</button>

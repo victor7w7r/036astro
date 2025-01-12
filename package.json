@@ -12,7 +12,9 @@
   },
   "dependencies": {
     "@abraham/reflection": "^0.12.0",
+    "@astrojs/node": "^9.0.0",
     "@astrojs/svelte": "^7.0.3",
+    "@hedystia/astro-bun": "^0.2.2",
     "@hotwired/stimulus": "^3.2.2",
     "@hotwired/turbo": "^8.0.12",
     "@nanostores/lit": "^0.2.2",
@@ -26,6 +28,8 @@
     "typedi": "^0.10.0"
   },
   "devDependencies": {
+    "@astro-tools/client-directives": "^0.1.1",
+    "@sveltejs/kit": "^2.15.2",
     "@swc/core": "^1.10.7",
     "@types/eslint": "^8.56.12",
     "@typescript-eslint/eslint-plugin": "^8.19.1",

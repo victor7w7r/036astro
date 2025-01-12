@@ -1,6 +1,6 @@
 import '@abraham/reflection'
 
-import { Container, Inject, Service } from 'typedi'
+import { Inject, Service } from 'typedi'
 
 @Service()
 export class Store {
@@ -11,5 +11,3 @@ export class Store {
 export class Testeable {
   @Inject() readonly store!: Store
 }
-
-export const testeable = Container.get(Testeable)
