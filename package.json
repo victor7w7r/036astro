@@ -15,7 +15,7 @@
     "@hotwired/stimulus": "^3.2.2",
     "@hotwired/turbo": "^8.0.12",
     "@nanostores/lit": "^0.2.2",
-    "@tanstack/svelte-query": "^5.62.16",
+    "@tanstack/svelte-query": "^5.64.0",
     "apisauce": "3.1.0",
     "fp-ts": "2.16.9",
     "lit": "^3.2.1",

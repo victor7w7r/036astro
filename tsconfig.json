@@ -13,6 +13,7 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "target": "ESNext",
+    "types": ["./node_modules/svelte/types"],
     "useDefineForClassFields": false
   },
   "extends": "./tsconfig.app.json",

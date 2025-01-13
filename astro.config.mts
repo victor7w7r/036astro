@@ -24,9 +24,9 @@ export default defineConfig({
     })
   ],
   //output: 'server',
-  prefetch: {
+  /*prefetch: {
     prefetchAll: true
-  },
+  },*/
   vite: {
     esbuild: false,
     plugins: [swc.vite()]

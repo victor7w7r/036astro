@@ -11,7 +11,5 @@ export class MyElement extends LitElement {
     </button>
   `
 
-  private readonly _onClick = () => {
-    this.count++
-  }
+  private readonly _onClick = () => this.count++
 }

@@ -9,6 +9,6 @@
     "src",
     "test",
     "astro.config.mts",
-    "svelte.config.ts"
+    "svelte.config.js"
   ]
 }
