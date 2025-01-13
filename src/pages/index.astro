@@ -7,14 +7,14 @@ import Layout from '../layouts/Layout.astro'
 <!-- <script src='../components/Element.svelte'></script> - -->
 <Layout>
   <main>
-    <a data-turbo='true' href='/page'>Pagina2</a>
-    <div data-turbo-permanent id='element'>
+    <a href='/page'>Pagina2</a>
+    <div id='element'>
       <h3>Lit</h3>
       <lit-element></lit-element>
       <br />
     </div>
     <h3>Stimulus</h3>
-    <div data-controller='counter' data-turbo-permanent id='stimulus'>
+    <div data-controller='counter'>
       <button data-action='click -> counter#increment' data-counter-target='btn'
       ></button>
     </div>

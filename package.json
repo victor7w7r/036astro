@@ -30,6 +30,7 @@
     "@sveltejs/kit": "^2.15.2",
     "@swc/core": "^1.10.7",
     "@types/eslint": "^8.56.12",
+    "@types/hotwired__turbo": "^8.0.3",
     "@typescript-eslint/eslint-plugin": "^8.19.1",
     "@typescript-eslint/parser": "^8.19.1",
     "astro": "^5.1.5",
