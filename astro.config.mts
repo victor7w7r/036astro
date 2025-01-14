@@ -1,4 +1,5 @@
 import { onClientDirective } from '@astro-tools/client-directives/on'
+import alpine from '@astrojs/alpinejs'
 import svelte from '@astrojs/svelte'
 import bun from '@hedystia/astro-bun'
 import { defineConfig } from 'astro/config'
@@ -9,6 +10,7 @@ import swc from 'unplugin-swc'
 export default defineConfig({
   adapter: bun(),
   integrations: [
+    alpine(),
     svelte(),
     min(),
     AutoImport({
